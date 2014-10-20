@@ -1,3 +1,7 @@
-<h2 id='title'>Welcome to Ember.js</h2>
+<h2 id='title'>Ember D3 Test</h2>
+{{#d3-plot class="axis" width=500 height=500}}
+  {{d3-axis class="x-axis" orientation="bottom" scale=xScale transform=xAxisTransform grid=xGrid}}
+  {{d3-axis class="y-axis" orientation="left" scale=yScale transform=yAxisTransform grid=yGrid}}
+{{/d3-plot}}
 
 {{outlet}}

@@ -1,0 +1,647 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"back",
+				"background-color"
+			],
+			[
+				"right",
+				"rightOrBottom"
+			],
+			[
+				"childSp",
+				"childSplitView"
+			],
+			[
+				"o",
+				"observes"
+			],
+			[
+				"update",
+				"updateChildSplitView"
+			],
+			[
+				"up",
+				"updateChildSplitView"
+			],
+			[
+				"childS",
+				"childSplitView"
+			],
+			[
+				"constr",
+				"constrainSplit"
+			],
+			[
+				"splitPer",
+				"splitPercentage"
+			],
+			[
+				"child",
+				"childSplitView"
+			],
+			[
+				"is",
+				"isDragging"
+			],
+			[
+				"width",
+				"widthPercentage"
+			],
+			[
+				"leftOr",
+				"leftOrTop"
+			],
+			[
+				"backgrou",
+				"background-clip"
+			],
+			[
+				"ourMin",
+				"ourMinHeight"
+			],
+			[
+				"childMin",
+				"childMinWidth"
+			],
+			[
+				"min",
+				"min-height"
+			],
+			[
+				"minLay",
+				"minLayoutWidth"
+			],
+			[
+				"tex",
+				"text-align"
+			],
+			[
+				"rightOrBo",
+				"rightOrBottomChildSelector"
+			],
+			[
+				"childTrim",
+				"childTrimHeight"
+			],
+			[
+				"rightOr",
+				"rightOrBottomChild"
+			],
+			[
+				"leftOrTop",
+				"leftOrTopSelector"
+			],
+			[
+				"hack",
+				"hackInit"
+			],
+			[
+				"con",
+				"containment"
+			],
+			[
+				"conta",
+				"containmentField"
+			],
+			[
+				"set",
+				"setupContainmentField"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"left",
+				"leftMinWidth"
+			],
+			[
+				"sa",
+				"sashLeft"
+			],
+			[
+				"sash",
+				"sashWidth"
+			],
+			[
+				"mouse",
+				"mouseUp"
+			],
+			[
+				"in",
+				"inline-block"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "/Volumes/Data/bhunt/Documents/Code/OpenSource/ember-d3/app/components/d3-plot.js",
+			"settings":
+			{
+				"buffer_size": 131,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Volumes/Data/bhunt/Documents/Code/OpenSource/ember-d3/app/templates/application.hbs",
+			"settings":
+			{
+				"buffer_size": 307,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Volumes/Data/bhunt/Documents/Code/OpenSource/ember-d3/app/components/d3-axis.js",
+			"settings":
+			{
+				"buffer_size": 631,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Volumes/Data/bhunt/Documents/Code/OpenSource/ember-d3/app/controllers/application.js",
+			"settings":
+			{
+				"buffer_size": 399,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 93.0,
+		"selected_items":
+		[
+		],
+		"width": 453.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Volumes/Data/bhunt/Documents/Code/OpenSource/ember-d3",
+		"/Volumes/Data/bhunt/Documents/Code/OpenSource/ember-d3/app",
+		"/Volumes/Data/bhunt/Documents/Code/OpenSource/ember-d3/app/components",
+		"/Volumes/Data/bhunt/Documents/Code/OpenSource/ember-d3/app/controllers",
+		"/Volumes/Data/bhunt/Documents/Code/OpenSource/ember-d3/app/templates",
+		"/Volumes/Data/bhunt/Documents/Code/OpenSource/ember-d3/app/templates/components",
+		"/Volumes/Data/bhunt/Documents/Code/OpenSource/ember-d3/tests",
+		"/Volumes/Data/bhunt/Documents/Code/OpenSource/ember-d3/tests/unit",
+		"/Volumes/Data/bhunt/Documents/Code/OpenSource/ember-d3/tests/unit/components"
+	],
+	"file_history":
+	[
+		"/Volumes/Data/bhunt/Documents/Code/OpenSource/ember-d3/app/templates/components/d3-test.hbs",
+		"/Volumes/Data/bhunt/Documents/Code/OpenSource/ember-d3/app/components/d3-test.js",
+		"/Volumes/Data/bhunt/Documents/Code/OpenSource/code-easy/app/templates/functions.hbs",
+		"/Volumes/Data/bhunt/Documents/Code/OpenSource/code-easy/server/routes/ast/types.js",
+		"/Volumes/Data/bhunt/Documents/Code/OpenSource/code-easy/server/routes/ast/functions.js",
+		"/Volumes/Data/bhunt/Documents/Code/OpenSource/code-easy/app/routes/functions.js",
+		"/Volumes/Data/bhunt/Documents/Code/OpenSource/code-easy/app/models/ast/typed-function.js",
+		"/Volumes/Data/bhunt/Documents/Code/OpenSource/code-easy/app/models/ast/type.js",
+		"/Volumes/Data/bhunt/Documents/Code/OpenSource/code-easy/app/models/ast/parameter.js",
+		"/Volumes/Data/bhunt/Documents/Code/OpenSource/code-easy/app/models/ast/typed-parameter.js",
+		"/Volumes/Data/bhunt/Documents/Code/OpenSource/code-easy/tests/unit/models/ast/parameter-test.js",
+		"/Volumes/Data/bhunt/Documents/Code/OpenSource/code-easy/tests/unit/models/ast/typed-parameter-test.js",
+		"/Volumes/Data/bhunt/Documents/Code/OpenSource/code-easy/app/models/ast/function.js",
+		"/Volumes/Data/bhunt/Documents/Code/OpenSource/code-easy/app/adapters/application.js",
+		"/Volumes/Data/bhunt/Documents/Code/OpenSource/code-easy/app/router.js",
+		"/Volumes/Data/bhunt/Documents/Code/OpenSource/code-easy/tests/unit/models/ast/typed-function-test.js",
+		"/Volumes/Data/bhunt/Documents/Code/OpenSource/code-easy/tests/unit/models/ast/function-test.js",
+		"/Volumes/Data/bhunt/Documents/Code/OpenSource/code-easy/app/models/semantic-version.js",
+		"/Volumes/Data/bhunt/Documents/Code/OpenSource/code-easy/tests/unit/models/semantic-version-test.js",
+		"/Volumes/Data/bhunt/Documents/Code/OpenSource/code-easy/app/styles/app.css",
+		"/Volumes/Data/bhunt/Documents/Code/OpenSource/code-easy/tests/unit/models/ast/type-test.js",
+		"/Volumes/Data/bhunt/Documents/Code/OpenSource/code-easy/Brocfile.js",
+		"/Volumes/Data/bhunt/Documents/Code/OpenSource/code-easy/package.json",
+		"/Volumes/Data/bhunt/Documents/Code/OpenSource/code-easy/bower.json",
+		"/Volumes/bhunt/dumps/Dump20140712.sql",
+		"/Volumes/Data/bhunt/Documents/Code/Projects/code-easy.sublime-project",
+		"/Volumes/Data/bhunt/Documents/Code/OpenSource/ember-split-view/app/config/environment.js",
+		"/Volumes/Data/bhunt/Documents/Code/OpenSource/ember-split-view/app/Brocfile.js",
+		"/Volumes/Data/bhunt/Documents/Code/OpenSource/ember-split-view/app/app/templates/yoda.hbs",
+		"/Volumes/Data/bhunt/Documents/Code/OpenSource/ember-split-view/app/app/styles/app.css",
+		"/Volumes/Data/bhunt/Documents/Code/OpenSource/ember-split-view/app/app/templates/vertical.hbs",
+		"/Volumes/Data/bhunt/Documents/Code/OpenSource/ember-split-view/app/app/routes/index.js",
+		"/Volumes/Data/bhunt/Documents/Code/OpenSource/ember-split-view/app/app/templates/ring.hbs",
+		"/Volumes/Data/bhunt/Documents/Code/OpenSource/ember-split-view/app/node_modules/ember-cli/lib/broccoli/ember-app.js",
+		"/Volumes/Data/bhunt/Documents/Code/OpenSource/ember-split-view/app/app/components/split-sash.js",
+		"/Volumes/Data/bhunt/Documents/Code/OpenSource/ember-split-view/app/app/components/split-view.js",
+		"/Volumes/Data/bhunt/Documents/Code/OpenSource/ember-split-view/app/app/controllers/application.js",
+		"/Volumes/Data/bhunt/Documents/Code/OpenSource/ember-split-view/app/app/router.js",
+		"/Volumes/Data/bhunt/Documents/Code/OpenSource/ember-split-view/app/bower.json",
+		"/Volumes/Data/bhunt/Documents/Code/OpenSource/ember-split-view/app/app/components/split-child.js",
+		"/Volumes/Data/bhunt/Documents/Code/OpenSource/ember-split-view/app/.jshintrc",
+		"/Volumes/Data/bhunt/Documents/Code/Projects/ember-api.sublime-project",
+		"/Volumes/Data/bhunt/Documents/Code/OpenSource/code-easy/app/templates/projects.hbs",
+		"/Volumes/Data/bhunt/Documents/Code/OpenSource/code-easy/server/routes/java-system-configs.js",
+		"/Volumes/Data/bhunt/Documents/Code/OpenSource/code-easy/vendor/font-awesome/css/font-awesome.css",
+		"/Volumes/Data/bhunt/Documents/Code/OpenSource/code-easy/app/templates/application.hbs",
+		"/Volumes/Data/bhunt/Documents/Code/OpenSource/code-easy/server/routes/system-users.js",
+		"/Volumes/Data/bhunt/Documents/Code/OpenSource/code-easy/server/routes/projects.js",
+		"/Volumes/Data/bhunt/Documents/Code/OpenSource/code-easy/app/controllers/application.js",
+		"/Volumes/Data/bhunt/Documents/Code/OpenSource/code-easy/app/index.html",
+		"/Volumes/Data/bhunt/Documents/Code/OpenSource/code-easy/app/models/system/user.js",
+		"/Volumes/Data/bhunt/Documents/Code/OpenSource/code-easy/app/routes/projects.js",
+		"/Volumes/Data/bhunt/Documents/Code/OpenSource/code-easy/server/cache.js",
+		"/Volumes/Data/bhunt/Documents/Code/OpenSource/code-easy/app/routes/index.js",
+		"/Volumes/Data/bhunt/Documents/Code/OpenSource/code-easy/app/routes/application.js",
+		"/Volumes/Data/bhunt/Documents/Code/OpenSource/code-easy/app/templates/index.hbs",
+		"/Volumes/Data/bhunt/Documents/Code/OpenSource/code-easy/app/routes/projects/js",
+		"/Volumes/Data/bhunt/Documents/Code/OpenSource/code-easy/server/routes/java/system/configs.js",
+		"/Volumes/Data/bhunt/Documents/Code/OpenSource/code-easy/app/models/java/system/runtime.js",
+		"/Volumes/Data/bhunt/Documents/Code/OpenSource/code-easy/app/models/java/ast/type.js",
+		"/Volumes/Data/bhunt/Documents/Code/OpenSource/code-easy/app/models/java/ast/parameter.js",
+		"/Volumes/Data/bhunt/Documents/Code/OpenSource/code-easy/app/models/java/ast/package.js",
+		"/Volumes/Data/bhunt/Documents/Code/OpenSource/code-easy/app/models/java/ast/class.js",
+		"/Volumes/Data/bhunt/Documents/Code/OpenSource/code-easy/app/models/java/system/config.js",
+		"/Volumes/Data/bhunt/Documents/Code/OpenSource/code-easy/app/models/project.js",
+		"/Volumes/Data/bhunt/Documents/Code/OpenSource/code-easy/app/models/java/ast/bundle.js",
+		"/Volumes/Data/bhunt/Documents/Code/OpenSource/code-easy/app/models/version.js",
+		"/Volumes/Data/bhunt/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/Volumes/Data/bhunt/Documents/Code/OpenSource/ember-split-view/app/app/templates/horizontal-composite.hbs",
+		"/Volumes/Data/bhunt/Documents/Code/OpenSource/ember-split-view/app/app/templates/composite.hbs",
+		"/Volumes/Data/bhunt/Documents/Code/OpenSource/ember-split-view/app/app/templates/vertical-composite.hbs",
+		"/Volumes/Data/bhunt/Documents/Code/OpenSource/ember-split-view/app/app/templates/horizontal.hbs",
+		"/Volumes/Data/bhunt/Documents/Code/OpenSource/ember-dashboard/ui/config/environment.js",
+		"/Volumes/Data/bhunt/Documents/Code/OpenSource/ember-split-view/app/components/split-sash.js",
+		"/Volumes/Data/bhunt/Documents/Code/OpenSource/ember-split-view/app/components/split-view.js",
+		"/Volumes/Data/bhunt/Documents/Code/OpenSource/ember-split-view/app/templates/vertical.hbs",
+		"/Volumes/Data/bhunt/Documents/Code/OpenSource/ember-split-view/app/components/split-right.js",
+		"/Volumes/Data/bhunt/Documents/Code/OpenSource/ember-split-view/app/components/split-left.js",
+		"/Volumes/Data/bhunt/Documents/Code/OpenSource/ember-split-view/app/components/split-child.js",
+		"/Volumes/Data/bhunt/Documents/Code/OpenSource/ember-split-view/Brocfile.js",
+		"/Volumes/Data/bhunt/Documents/Code/OpenSource/ember-split-view/app/index.html",
+		"/Volumes/Data/bhunt/Documents/Code/OpenSource/ember-split-view-rt/app/app/index.html",
+		"/Volumes/Data/bhunt/Documents/Code/OpenSource/ember-split-view/package.json",
+		"/Volumes/Data/bhunt/Documents/Code/OpenSource/ember-split-view/app/templates/application.hbs",
+		"/Volumes/Data/bhunt/Documents/Code/OpenSource/ember-split-view/app/app.js",
+		"/Volumes/Data/bhunt/Documents/Code/OpenSource/ember-split-view-rt/app/app/templates/application.hbs",
+		"/Volumes/Data/bhunt/Documents/Code/OpenSource/ember-split-view/app/app/components/split-left.js",
+		"/Volumes/Data/bhunt/Documents/Code/OpenSource/ember-split-view/app/app/components/split-right.js",
+		"/Volumes/Data/bhunt/Documents/Code/OpenSource/ember-split-view/app/app/templates/constitution.hbs",
+		"/Volumes/Data/bhunt/Documents/Code/OpenSource/ember-split-view/app/app/templates/vertical_composite.hbs",
+		"/Volumes/Data/bhunt/Documents/Code/OpenSource/ember-split-view/app/app/templates/horizontal_composite.hbs",
+		"/Volumes/Data/bhunt/Documents/Code/OpenSource/ember-split-view/app/app/templates/components/split-left.hbs",
+		"/Volumes/Data/bhunt/Documents/Code/OpenSource/ember-split-view/app/app/views/split.js",
+		"/Volumes/Data/bhunt/Documents/Code/OpenSource/ember-split-view/app/app/views/yoda.js",
+		"/Volumes/Data/bhunt/Documents/Code/OpenSource/ember-split-view/app/app/templates/rings.hbs",
+		"/Volumes/Data/bhunt/Documents/Code/OpenSource/ember-split-view/app/app/views/sash.js",
+		"/Volumes/Data/bhunt/Documents/Code/OpenSource/ember-split-view/app/app/views/rings.js",
+		"/Volumes/Data/bhunt/Documents/Code/OpenSource/ember-split-view/app/app/index.html",
+		"/Volumes/Data/bhunt/Documents/Code/OpenSource/ember-split-view/app/views/split.js",
+		"/Volumes/Data/bhunt/Documents/Code/OpenSource/ember-split-view/app/views/sash.js",
+		"/Volumes/Data/bhunt/Documents/Code/OpenSource/ember-split-view/app/styles/app.css",
+		"/Volumes/Data/bhunt/Documents/Code/OpenSource/ember-split-view/app/controllers/application.js",
+		"/Volumes/Data/bhunt/Documents/Code/OpenSource/ember-split-view/app/routes/index.js",
+		"/Volumes/Data/bhunt/Documents/Code/OpenSource/ember-split-view/app/templates/index.hbs",
+		"/Volumes/Data/bhunt/Documents/Code/OpenSource/ember-split-view/app/router.js",
+		"/Volumes/Data/bhunt/Documents/Code/OpenSource/ember-split-view/app/templates/composite.hbs",
+		"/Volumes/Data/bhunt/Documents/Code/OpenSource/ember-split-view/ember-split-view.sublime-project",
+		"/Volumes/Data/bhunt/Documents/Code/OpenSource/osgi-jax-rs-connector/osgi-jax-rs-connector/README.md",
+		"/Volumes/Data/bhunt/Documents/Code/OpenSource/split-view/app/templates.horizontal.hbs",
+		"/Volumes/Data/bhunt/Documents/Code/OpenSource/split-view/app/styles/app.css",
+		"/Volumes/Data/bhunt/Documents/Code/Springfield/ast/ui/app/views/sash.js",
+		"/Volumes/Data/bhunt/Documents/Code/Springfield/ast/ui/app/templates/index.hbs",
+		"/Volumes/Data/bhunt/Documents/Code/Springfield/ast/ui/app/styles/app.css",
+		"/Volumes/Data/bhunt/Documents/Code/Springfield/ast/ui/app/views/split.js",
+		"/Volumes/Data/bhunt/Documents/Code/Springfield/ast/ui/app/views/span.js",
+		"/Volumes/Data/bhunt/Documents/Code/Springfield/ast/ui/app/index.html",
+		"/Volumes/Data/bhunt/Documents/Code/Springfield/ast/ui/.jshintrc",
+		"/Volumes/Data/bhunt/Library/Application Support/Sublime Text 3/Packages/Default/Preferences.sublime-settings"
+	],
+	"find":
+	{
+		"height": 25.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+			"/Volumes/Data/bhunt/Documents/Code/Springfield/ast/ui/app,/Volumes/Data/bhunt/Documents/Code/Springfield/ast/ui/app/templates",
+			"/Volumes/Data/bhunt/Documents/Code/Springfield/ast/ui/app"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"();\n",
+			"minRightPercentage",
+			"minLeftPercentage",
+			"right",
+			"left",
+			"minPercentage",
+			"minChildPercentage",
+			"left",
+			"(.$().",
+			"fixedSide",
+			"();\n",
+			"width",
+			"updateSplit",
+			"minWidthPercentage",
+			"opacity",
+			"\n      ",
+			"left",
+			"split",
+			"updateChildWidths",
+			"updateChildSizes",
+			"child",
+			"updatesashOffset",
+			"positiono",
+			"position",
+			"sash.position",
+			"sahsPosition",
+			"emberjs",
+			"offset",
+			"sash.offset",
+			"sashOffset",
+			"SashOffset",
+			"sashOffset",
+			"offset",
+			"updateMinWidthHeight",
+			"updateContainmentField",
+			"console",
+			"offset",
+			"Offset",
+			"offset",
+			"sashWidth",
+			"6",
+			"childMinHeight",
+			"childMinWidth",
+			"getChildTrimWidth",
+			"getChildTrimHeight",
+			"getChildRightTrimWidth",
+			"getChildLeftTrimWidth",
+			"rightChildTrimWidth",
+			"topChildTrimWidth",
+			"leftChildTrimWidth",
+			"leftChildWidth",
+			"parentWidth",
+			"right",
+			"left",
+			"rightMargin",
+			"rightBorderWidth",
+			"rightPadding",
+			"width",
+			"leftPadding",
+			"leftBorderWidth",
+			"leftMargin",
+			"rightHeight",
+			"rightWidth",
+			"leftHeight",
+			"leftWidth",
+			"rightSelector",
+			");\n",
+			"selectedIndex",
+			"left",
+			"jquery"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 2,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "/Volumes/Data/bhunt/Documents/Code/OpenSource/ember-d3/app/components/d3-plot.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 131,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								131,
+								131
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/Volumes/Data/bhunt/Documents/Code/OpenSource/ember-d3/app/templates/application.hbs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 307,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								82,
+								82
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Handlebars/Handlebars.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/Volumes/Data/bhunt/Documents/Code/OpenSource/ember-d3/app/components/d3-axis.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 631,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								305,
+								305
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 3,
+					"file": "/Volumes/Data/bhunt/Documents/Code/OpenSource/ember-d3/app/controllers/application.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 399,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								399,
+								399
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 25.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			0.540783251983,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"project": "ember-d3.sublime-project",
+	"replace":
+	{
+		"height": 46.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 281.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
