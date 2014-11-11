@@ -1,7 +1,13 @@
 <h2 id='title'>Ember D3 Test</h2>
 {{#d3-plot class="axis" width=500 height=500}}
+  {{#d3-defs}}
+    {{#d3-clip-path id="clip-body"}}
+      {{d3-rect x=-5 y=0 width=450 height=440}}
+    {{/d3-clip-path}}
+  {{/d3-defs}}
   {{d3-axis class="x-axis" orientation="bottom" scale=xScale transform=xAxisTransform grid=xGrid}}
   {{d3-axis class="y-axis" orientation="left" scale=yScale transform=yAxisTransform grid=yGrid}}
+  {{d3-chart-body transform="translate(25,25)" clip-path="url(#clip-body)" plot=plot}}
 {{/d3-plot}}
 
 {{outlet}}
