@@ -5,6 +5,6 @@ export default Ember.Component.extend({
   attributeBindings: ['transform', 'clip-path'],
 
   didInsertElement: function() {
-    this.get('plot')(d3.select("#" + this.elementId));
+    this.get('plotter').set('svg', d3.select("#" + this.elementId));
   }
 });
