@@ -4,6 +4,7 @@ import XYLinePlotter from '../utils/xy-line-plotter';
 export default Ember.Controller.extend({
   redraw: false,
   xMax: 100,
+  yMax: 100,
 
   xAxisTransform: "translate(25,475)",
   yAxisTransform: "translate(25,25)",
@@ -19,5 +20,9 @@ export default Ember.Controller.extend({
 
   updateXScale: function() {
     this.set('plotter.xScale', d3.scale.linear().domain([0, this.get('xMax')]).range([0, 450]));
-  }.observes('xMax')
+  }.observes('xMax'),
+
+  updateYScale: function() {
+    this.set('plotter.yScale', d3.scale.linear().domain([this.get('yMax'), 0]).range([0, 450]));
+  }.observes('yMax')
 });
