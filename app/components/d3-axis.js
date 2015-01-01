@@ -41,22 +41,22 @@ export default Ember.Component.extend({
   updateTicks: function() {
     this.get('axis').ticks(this.get('ticks'))
     Ember.run.once(this, this.updateAxis);
-  },
+  }.observes('ticks'),
 
   updateTickSubdivide: function() {
     this.get('axis').tickSubdivide(this.get('tickSubdivide'))
     Ember.run.once(this, this.updateAxis);
-  },
+  }.observes('tickSubdivide'),
 
   updateTickFormat: function() {
     this.get('axis').tickFormat(this.get('tickFormat'))
     Ember.run.once(this, this.updateAxis);
-  },
+  }.observes('tickFormat'),
 
   updateTickPadding: function() {
     this.get('axis').tickPadding(this.get('tickPadding'))
     Ember.run.once(this, this.updateAxis);
-  },
+  }.observes('tickPadding'),
 
   updateAxis: function() {
     var id = "#" + this.elementId;
@@ -77,7 +77,7 @@ export default Ember.Component.extend({
       var y2 = this.get('grid.y2');
 
       var id = "#" + this.elementId;
-      d3.selectAll(id + " g.tick").append("line").classed("grid-line", true).attr("x1", x1). attr("y1", y1).attr("x2", x2).attr("y2", y2);    
+      d3.selectAll(id + " g.tick").append("line").classed("grid-line", true).attr("x1", x1). attr("y1", y1).attr("x2", x2).attr("y2", y2);
     }
   }.observes('grid')
 });
