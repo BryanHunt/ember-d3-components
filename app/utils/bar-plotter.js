@@ -18,8 +18,8 @@ export default Ember.Object.extend({
     svg.selectAll("rect.bar").data(data).enter().append("rect").attr("class", "bar");
     svg.selectAll("rect.bar").data(data).attr("x", function(dataPoint){return xScale(dataPoint.x);})
                                         .attr("y", function(dataPoint){return yScale(dataPoint.y);})
-                                        .attr("height", function(dataPoint){return 450 - yScale(dataPoint.y);})
-                                        .attr("width", function(dataPoint){return Math.floor(450 / data.length) - padding});
+                                        .attr("height", function(dataPoint){return 450 - yScale(dataPoint.y);}) // FIXME: figure out how to get the plot area height
+                                        .attr("width", function(dataPoint){return Math.floor(450 / data.length) - padding}); // FIXME: figure out how to get the plot area width
     svg.selectAll("rect.bar").data(data).exit().remove();
-  }.observes('svg', 'xScale', 'yScale', 'data')
+  }.observes('svg', 'xScale', 'yScale', 'data', 'padding')
 });
