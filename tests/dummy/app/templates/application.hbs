@@ -1,18 +1,8 @@
 <h2 id='title'>Ember D3 Test</h2>
-<svg class="axis" width=500 height=500>
-  <defs>
-    <clippath id="clip-body">
-      <rect x=-5 y=0 width=455 height=440></rect>
-    </clippath>
-  </defs>
-  {{d3-axis class="x-axis" orientation="bottom" scale=plotter.xScale transform=xAxisTransform grid=xGrid}}
-  {{d3-axis class="y-axis" orientation="left" scale=plotter.yScale transform=yAxisTransform grid=yGrid}}
-  {{d3-chart-body transform="translate(25,25)" clip-path="url(#clip-body)" plotter=plotter redraw=redraw}}
-</svg>
+<ul class="side-nav">
+  <li>{{#link-to 'x-y-plot'}}XY Plot{{/link-to}}</li>
+  <li>{{#link-to 'bar-plot'}}Bar Plot{{/link-to}}</li>
+</ul>
 
-<br>
-X Max {{input value=xMax}}
-<br>
-Y Max {{input value=yMax}}
 
 {{outlet}}
