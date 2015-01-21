@@ -15,7 +15,9 @@ export default Ember.Controller.extend({
   plotter: BarPlotter.create({
     xScale: d3.scale.linear().domain([0, 3]).range([0, 450]),
     yScale: d3.scale.linear().domain([100, 0]).range([0, 450]),
-    data: [{x: 0, y: 10}, {x: 1, y: 20}, {x: 2, y:35}]
+    data: [{x: 0, y: 10}, {x: 1, y: 20}, {x: 2, y:35}],
+    width: 450,
+    height: 450
   }),
 
   updateXScale: function() {
