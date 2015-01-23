@@ -21,6 +21,16 @@ button {
     cursor: pointer;
 }
 
+.side-nav {
+  width: 200px;
+  display: inline-block;
+  vertical-align:top;
+}
+
+.ember-d3 {
+  width: 600px;
+  display: inline-block;
+}
 .box {
     width: 200px;
     height: 200px;
@@ -157,7 +167,7 @@ button {
 }
 
 .line{
-    fill: none;    
+    fill: none;
     stroke: steelblue;
     stroke-width: 2;
 }
