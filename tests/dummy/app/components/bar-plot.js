@@ -5,7 +5,6 @@ import LinearScale from '../utils/d3-scale-linear';
 const { Component, observer } = Ember;
 
 export default Component.extend({
-  redraw: false,
   xMax: 3,
   yMax: 100,
 

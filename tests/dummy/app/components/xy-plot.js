@@ -5,7 +5,6 @@ import LinearScale from '../utils/d3-scale-linear';
 const { Component, observer } = Ember;
 
 export default Component.extend({
-  redraw: false,
   xMax: 100,
   yMax: 100,
 
@@ -18,8 +17,6 @@ export default Component.extend({
   plotter: XYLinePlotter.create({
     xScale: LinearScale.create({domain: [0, 100], range: [0, 450]}),
     yScale: LinearScale.create({domain: [100, 0], range: [0, 450]}),
-//    xScale: d3.scale.linear().domain([0, 100]).range([0, 450]),
-//    yScale: d3.scale.linear().domain([100, 0]).range([0, 450]),
     data: [[{x: 0, y: 10}, {x: 10, y: 20}, {x: 20, y:35}, {x: 30, y:45}, {x: 50, y:65}, {x: 70, y:95}, {x: 80, y:97}, {x: 90, y:100} ]]
   }),
 
