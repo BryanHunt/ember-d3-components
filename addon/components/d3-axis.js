@@ -42,8 +42,8 @@ export default Component.extend({
     Ember.run.once(this, this.updateAxis);
   }),
 
-  updateScale: observer('scale', function() {
-    this.get('axis').scale(this.get('scale'));
+  updateScale: observer('scale.scale', function() {
+    this.get('axis').scale(this.get('scale.scale'));
     Ember.run.once(this, this.updateAxis);
   }),
 

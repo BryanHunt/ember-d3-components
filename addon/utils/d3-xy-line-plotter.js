@@ -8,17 +8,17 @@ export default Ember.Object.extend({
   yScale: null,
   data: null,
 
-  plot: observer('svg', 'xScale', 'yScale', 'data', function() {
-    var svg = this.get('svg');
-    var xScale = this.get('xScale');
-    var yScale = this.get('yScale');
-    var data = this.get('data');
+  plot: observer('svg', 'xScale.scale', 'yScale.scale', 'data', function() {
+    let svg = this.get('svg');
+    let xScale = this.get('xScale.scale');
+    let yScale = this.get('yScale.scale');
+    let data = this.get('data');
 
     if(!svg || !xScale || !yScale || !data) {
       return;
     }
 
-    var line = d3.svg.line();
+    let line = d3.svg.line();
     line.x((dataPoint) => {return xScale(dataPoint.x);});
     line.y((dataPoint) => {return yScale(dataPoint.y);});
 

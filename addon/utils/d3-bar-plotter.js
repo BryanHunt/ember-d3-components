@@ -11,13 +11,13 @@ export default Ember.Object.extend({
   width: null,
   height: null,
 
-  plot: observer('svg', 'xScale', 'yScale', 'data', 'padding', 'width', 'height', function() {
+  plot: observer('svg', 'xScale.scale', 'yScale.scale', 'data', 'padding', 'width', 'height', function() {
     let padding = this.get('padding');
     let width = this.get('width');
     let height = this.get('height');
     let svg = this.get('svg');
-    let xScale = this.get('xScale');
-    let yScale = this.get('yScale');
+    let xScale = this.get('xScale.scale');
+    let yScale = this.get('yScale.scale');
     let data = this.get('data');
 
     if(!svg || !xScale || !yScale || !data || !width || !height) {
