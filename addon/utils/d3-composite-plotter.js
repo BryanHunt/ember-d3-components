@@ -18,7 +18,7 @@ export default Ember.Object.extend({
     }
   }),
 
-  updateXScale: on('init', observer('xScale', function() {
+  updateXScale: on('init', observer('xScale.scale', function() {
     var xScale = this.get('xScale');
 
     if(xScale) {
@@ -26,7 +26,7 @@ export default Ember.Object.extend({
     }
   })),
 
-  updateYScale: on('init', observer('yScale', function() {
+  updateYScale: on('init', observer('yScale.scale', function() {
     var yScale = this.get('yScale');
 
     if(yScale) {
