@@ -1,5 +1,9 @@
 # Ember-d3
 
+This addon provides components for visualizing data with d3.
+
+This project is very much in the experimental phase.  Use with caution.
+
 This README outlines the details of collaborating on this Ember addon.
 
 ## Installation
