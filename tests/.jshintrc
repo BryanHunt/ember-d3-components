@@ -1,5 +1,7 @@
 {
   "predef": [
+    "d3",
+    "server",
     "document",
     "window",
     "location",

@@ -1,8 +1,8 @@
 import Ember from 'ember';
 
-const { Object, observer } = Ember;
+const { observer } = Ember;
 
-export default Object.extend({
+export default Ember.Object.extend({
   svg: null,
   xScale: null,
   yScale: null,
@@ -12,10 +12,11 @@ export default Object.extend({
     var svg = this.get('svg');
     var xScale = this.get('xScale');
     var yScale = this.get('yScale');
-    var data = this.get('data')
+    var data = this.get('data');
 
-    if(!svg || !xScale || !yScale || !data)
+    if(!svg || !xScale || !yScale || !data) {
       return;
+    }
 
     var line = d3.svg.line();
     line.x((dataPoint) => {return xScale(dataPoint.x);});
