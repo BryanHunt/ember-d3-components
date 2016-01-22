@@ -1,10 +1,10 @@
-import xyLinePlotter from '../../../utils/xy-line-plotter';
+import barPlotter from '../../../utils/bar-plotter';
 import { module, test } from 'qunit';
 
-module('Unit | Utility | xy line plotter');
+module('Unit | Utility | bar plotter');
 
 // Replace this with your real tests.
 test('it works', function(assert) {
-  let result = xyLinePlotter();
+  let result = barPlotter();
   assert.ok(result);
 });

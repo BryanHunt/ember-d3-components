@@ -3,15 +3,17 @@ import BarPlotter from '../utils/bar-plotter';
 import XYLinePlotter from '../utils/xy-line-plotter';
 import CompositePlotter from '../utils/composite-plotter';
 
-export default Ember.Controller.extend({
+const { Component, Object, observer } = Ember;
+
+export default Component.extend({
   redraw: false,
   xMax: 100,
   yMax: 100,
   xAxisTransform: "translate(25,475)",
   yAxisTransform: "translate(25,25)",
 
-  xGrid: Ember.Object.create({x1: 0, y1: 0, x2: 0, y2: -450}),
-  yGrid: Ember.Object.create({x1: 0, y1: 0, x2: 450, y2: 0}),
+  xGrid: Object.create({x1: 0, y1: 0, x2: 0, y2: -450}),
+  yGrid: Object.create({x1: 0, y1: 0, x2: 450, y2: 0}),
 
   plotter: CompositePlotter.create({
     xScale: d3.scale.linear().domain([0, 3]).range([0, 450]),
@@ -23,11 +25,11 @@ export default Ember.Controller.extend({
       XYLinePlotter.create({ data: [[{x: 0, y: 10}, {x: 1, y: 20}, {x: 2, y:35}]] })
     ]}),
 
-  updateXScale: function() {
+  updateXScale: observer('xMax', function() {
     this.set('plotter.xScale', d3.scale.linear().domain([0, this.get('xMax')]).range([0, 450]));
-  }.observes('xMax'),
+  }),
 
-  updateYScale: function() {
+  updateYScale: observer('yMax', function() {
     this.set('plotter.yScale', d3.scale.linear().domain([this.get('yMax'), 0]).range([0, 450]));
-  }.observes('yMax')
+  })
 });
