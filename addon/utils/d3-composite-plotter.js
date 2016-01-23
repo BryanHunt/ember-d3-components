@@ -3,43 +3,48 @@ import Ember from 'ember';
 const { observer, on } = Ember;
 
 export default Ember.Object.extend({
-  updateSVG: on('init', observer('svg', function() {
-    var svg = this.get('svg');
+  updateSVG: on('init', observer('svg', 'children', function() {
+    let svg = this.get('svg');
+    let children = this.get('children');
 
-    if(svg) {
-      this.get('children').forEach((child) => {child.set('svg', svg);});
+    if(svg && children) {
+      children.forEach((child) => {child.set('svg', svg);});
     }
   })),
 
-  updateXScale: on('init', observer('xScale.scale', function() {
-    var xScale = this.get('xScale');
+  updateXScale: on('init', observer('xScale.scale', 'children', function() {
+    let xScale = this.get('xScale');
+    let children = this.get('children');
 
-    if(xScale) {
-      this.get('children').forEach((child) => {child.set('xScale', xScale);});
+    if(xScale && children) {
+      children.forEach((child) => {child.set('xScale', xScale);});
     }
   })),
 
-  updateYScale: on('init', observer('yScale.scale', function() {
-    var yScale = this.get('yScale');
+  updateYScale: on('init', observer('yScale.scale', 'children', function() {
+    let yScale = this.get('yScale');
+    let children = this.get('children');
 
-    if(yScale) {
-      this.get('children').forEach((child) => {child.set('yScale', yScale);});
+    if(yScale && children) {
+      children.forEach((child) => {child.set('yScale', yScale);});
     }
   })),
 
-  updateWidth: on('init', observer('width', function() {
-    var width = this.get('width');
+  updateWidth: on('init', observer('width', 'children', function() {
+    let width = this.get('width');
+    let children = this.get('children');
 
-    if(width) {
-      this.get('children').forEach((child) => {child.set('width', width);});
+    if(width && children) {
+      children.forEach((child) => {child.set('width', width);});
     }
   })),
 
-  updateHeight: on('init', observer('height', function() {
-    var height = this.get('height');
+  updateHeight: on('init', observer('height', 'children', function() {
+    let height = this.get('height');
+    let children = this.get('children');
 
-    if(height) {
-      this.get('children').forEach((child) => {child.set('height', height);});
+    if(height && children) {
+      children.forEach((child) => {child.set('height', height);});
     }
   })),
 });
