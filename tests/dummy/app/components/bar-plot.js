@@ -20,7 +20,8 @@ export default Component.extend({
     yScale: LinearScale.create({domain: [100, 0], range: [0, 450]}),
     data: [{x: "Apples", y: 10}, {x: "Oranges", y: 20}, {x: "Bananas", y:35}],
     width: 450,
-    height: 450
+    height: 450,
+    barWidthTransform: function(dataPoint, xScale) {return xScale.rangeBand();}
   }),
 
   updateYScale: observer('yMax', function() {
