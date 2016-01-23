@@ -1,4 +1,4 @@
-import compositePlotter from '../../../utils/composite-plotter';
+import compositePlotter from '../../../utils/plotters/d3-composite-plotter';
 import { module, test } from 'qunit';
 
 module('Unit | Utility | composite plotter');

@@ -1,6 +1,6 @@
 import Ember from 'ember';
-import XYLinePlotter from '../utils/d3-xy-line-plotter';
-import LinearScale from '../utils/d3-scale-linear';
+import XYLinePlotter from '../utils/plotters/d3-xy-line-plotter';
+import LinearScale from '../utils/scales/d3-linear-scale';
 
 const { Component, observer } = Ember;
 

@@ -1,4 +1,4 @@
-import xyLinePlotter from '../../../utils/xy-line-plotter';
+import xyLinePlotter from '../../../utils/plotters/d3-xy-line-plotter';
 import { module, test } from 'qunit';
 
 module('Unit | Utility | xy line plotter');

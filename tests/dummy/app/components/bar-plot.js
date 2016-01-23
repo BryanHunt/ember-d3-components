@@ -1,7 +1,7 @@
 import Ember from 'ember';
-import BarPlotter from '../utils/d3-bar-plotter';
-import OrdinalScale from '../utils/d3-scale-ordinal';
-import LinearScale from '../utils/d3-scale-linear';
+import BarPlotter from '../utils/plotters/d3-bar-plotter';
+import OrdinalScale from '../utils/scales/d3-ordinal-scale';
+import LinearScale from '../utils/scales/d3-linear-scale';
 
 const { Component, observer } = Ember;
 

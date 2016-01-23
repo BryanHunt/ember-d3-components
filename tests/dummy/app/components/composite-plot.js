@@ -1,9 +1,9 @@
 import Ember from 'ember';
-import BarPlotter from '../utils/d3-bar-plotter';
-import XYLinePlotter from '../utils/d3-xy-line-plotter';
-import CompositePlotter from '../utils/d3-composite-plotter';
-import LinearScale from '../utils/d3-scale-linear';
-import OrdinalScale from '../utils/d3-scale-ordinal';
+import BarPlotter from '../utils/plotters/d3-bar-plotter';
+import XYLinePlotter from '../utils/plotters/d3-xy-line-plotter';
+import CompositePlotter from '../utils/plotters/d3-composite-plotter';
+import LinearScale from '../utils/scales/d3-linear-scale';
+import OrdinalScale from '../utils/scales/d3-ordinal-scale';
 
 const { Component, observer } = Ember;
 
