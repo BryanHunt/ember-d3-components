@@ -3,20 +3,13 @@ import Ember from 'ember';
 const { observer, on } = Ember;
 
 export default Ember.Object.extend({
-  xScale: null,
-  yScale: null,
-  svg: null,
-  width: null,
-  height: null,
-  children: null,
-
-  updateSVG: observer('svg', function() {
+  updateSVG: on('init', observer('svg', function() {
     var svg = this.get('svg');
 
     if(svg) {
       this.get('children').forEach((child) => {child.set('svg', svg);});
     }
-  }),
+  })),
 
   updateXScale: on('init', observer('xScale.scale', function() {
     var xScale = this.get('xScale');
