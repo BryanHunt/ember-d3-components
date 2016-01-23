@@ -90,7 +90,7 @@ export default Component.extend({
       var y1 = this.get('grid.y1');
       var y2 = this.get('grid.y2');
 
-      d3.selectAll(id + " g.tick").append("line").classed("grid-line", true).attr("x1", x1). attr("y1", y1).attr("x2", x2).attr("y2", y2);
+      d3.selectAll(id + " g.tick").append("line").classed("grid-line", true).attr("x1", x1).attr("y1", y1).attr("x2", x2).attr("y2", y2);
     }
   }
 });
