@@ -1,74 +1,73 @@
 import Ember from 'ember';
 
-const { Component, observer } = Ember;
+const { Component, on, observer } = Ember;
 
 export default Component.extend({
   tagName: 'g',
   attributeBindings: ['transform'],
 
-  didInsertElement() {
+  init() {
     this.set('axis', d3.svg.axis());
-
-    if(this.get('orientation')) {
-      this.updateOritntation();
-    }
-
-    if(this.get('scale')) {
-      this.updateScale();
-    }
-
-    if(this.get('ticks')) {
-      this.updateTicks();
-    }
-
-    if(this.get('tickSubdivide')) {
-      this.updateTickSubdivide();
-    }
-
-    if(this.get('tickFormat')) {
-      this.updateTickFormat();
-    }
-
-    if(this.get('tickPadding')) {
-      this.updateTickPadding();
-    }
-
-    Ember.run.once(this, this.updateAxis);
+    this._super.apply(this, arguments);
   },
 
-  updateOritntation: observer('orientation', function() {
-    this.get('axis').orient(this.get('orientation'));
-    Ember.run.once(this, this.updateAxis);
-  }),
+  updateOritntation: on('init', observer('orientation', function() {
+    let orientation = this.get('orientation');
 
-  updateScale: observer('scale.scale', function() {
-    this.get('axis').scale(this.get('scale.scale'));
-    Ember.run.once(this, this.updateAxis);
-  }),
+    if(orientation) {
+      this.get('axis').orient(orientation);
+      Ember.run.once(this, this.updateAxis);
+    }
+  })),
 
-  updateTicks: observer('ticks', function() {
-    this.get('axis').ticks(this.get('ticks'));
-    Ember.run.once(this, this.updateAxis);
-  }),
+  updateScale: on('init', observer('scale.scale', function() {
+    let scale = this.get('scale.scale');
 
-  updateTickSubdivide: observer('tickSubdivide', function() {
-    this.get('axis').tickSubdivide(this.get('tickSubdivide'));
-    Ember.run.once(this, this.updateAxis);
-  }),
+    if(scale) {
+      this.get('axis').scale(scale);
+      Ember.run.once(this, this.updateAxis);
+    }
+  })),
 
-  updateTickFormat: observer('tickFormat', function() {
-    this.get('axis').tickFormat(this.get('tickFormat'));
-    Ember.run.once(this, this.updateAxis);
-  }),
+  updateTicks: on('init', observer('ticks', function() {
+    let ticks = this.get('ticks');
 
-  updateTickPadding: observer('tickPadding', function() {
-    this.get('axis').tickPadding(this.get('tickPadding'));
-    Ember.run.once(this, this.updateAxis);
-  }),
+    if(ticks) {
+      this.get('axis').ticks(ticks);
+      Ember.run.once(this, this.updateAxis);
+    }
+  })),
 
-  gridChanged: observer('grid', function() {
-    Ember.run.once(this, this.updateGrid);
-  }),
+  updateTickSubdivide: on('init', observer('tickSubdivide', function() {
+    let tickSubdivide = this.get('tickSubdivide');
+
+    if(tickSubdivide) {
+      this.get('axis').tickSubdivide(tickSubdivide);
+      Ember.run.once(this, this.updateAxis);
+    }
+  })),
+
+  updateTickFormat: on('init', observer('tickFormat', function() {
+    let tickFormat = this.get('tickFormat');
+
+    if(tickFormat) {
+      this.get('axis').tickFormat(tickFormat);
+      Ember.run.once(this, this.updateAxis);
+    }
+  })),
+
+  updateTickPadding: on('init', observer('tickPadding', function() {
+    let tickPadding = this.get('tickPadding');
+
+    if(tickPadding) {
+      this.get('axis').tickPadding(tickPadding);
+      Ember.run.once(this, this.updateAxis);
+    }
+  })),
+
+  gridChanged: on('init', observer('grid', function() {
+    Ember.run.once(this, this.updateAxis);
+  })),
 
   updateAxis() {
     var id = "#" + this.elementId;
