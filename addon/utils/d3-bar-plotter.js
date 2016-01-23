@@ -1,15 +1,11 @@
 import Ember from 'ember';
 
-const { observer } = Ember;
+const { on, observer } = Ember;
 
 export default Ember.Object.extend({
-  svg: null,
-  xScale: null,
-  yScale: null,
-  padding: 4,
-  data: null,
-  width: null,
-  height: null,
+  init() {
+    this.set('padding', 4);
+  },
 
   plot: observer('svg', 'xScale.scale', 'yScale.scale', 'data', 'padding', 'width', 'height', function() {
     let padding = this.get('padding');

@@ -1,26 +1,37 @@
 import Ember from 'ember';
 
-const { observer } = Ember;
+const { on, observer } = Ember;
 
 export default Ember.Object.extend({
-  svg: null,
-  xScale: null,
-  yScale: null,
-  data: null,
+  init() {
+    this.set('line', d3.svg.line());
+  },
 
-  plot: observer('svg', 'xScale.scale', 'yScale.scale', 'data', function() {
+  xScaleUpdated: on('init', observer('xScale.scale', function() {
+    let scale = this.get('xScale.scale');
+
+    if(scale) {
+      this.get('line').x((dataPoint) => {return scale(dataPoint.x);});
+    }
+  })),
+
+  yScaleUpdated: on('init', observer('yScale.scale', function() {
+    let scale = this.get('yScale.scale');
+
+    if(scale) {
+      this.get('line').y((dataPoint) => {return scale(dataPoint.y);});
+    }
+  })),
+
+  plot: observer('svg', 'data', function() {
     let svg = this.get('svg');
-    let xScale = this.get('xScale.scale');
-    let yScale = this.get('yScale.scale');
     let data = this.get('data');
 
-    if(!svg || !xScale || !yScale || !data) {
+    if(!svg || !data) {
       return;
     }
 
-    let line = d3.svg.line();
-    line.x((dataPoint) => {return xScale(dataPoint.x);});
-    line.y((dataPoint) => {return yScale(dataPoint.y);});
+    let line = this.get('line');
 
     svg.selectAll("path.line").data(data).enter().append("path").attr("class", "line");
     svg.selectAll("path.line").data(data).attr("d", (dataPoint) => {return line(dataPoint);});
