@@ -11,7 +11,7 @@ export default Component.extend({
     this._super.apply(this, arguments);
   },
 
-  updateOritntation: on('init', observer('orientation', function() {
+  oritntationChanged: on('init', observer('orientation', function() {
     let orientation = this.get('orientation');
 
     if(orientation) {
@@ -20,7 +20,7 @@ export default Component.extend({
     }
   })),
 
-  updateScale: on('init', observer('scale.scale', function() {
+  scaleChanged: on('init', observer('scale.scale', function() {
     let scale = this.get('scale.scale');
 
     if(scale) {
@@ -29,7 +29,7 @@ export default Component.extend({
     }
   })),
 
-  updateTicks: on('init', observer('ticks', function() {
+  ticksChanged: on('init', observer('ticks', function() {
     let ticks = this.get('ticks');
 
     if(ticks) {
@@ -38,7 +38,7 @@ export default Component.extend({
     }
   })),
 
-  updateTickSubdivide: on('init', observer('tickSubdivide', function() {
+  tickSubdivideChanged: on('init', observer('tickSubdivide', function() {
     let tickSubdivide = this.get('tickSubdivide');
 
     if(tickSubdivide) {
@@ -47,7 +47,7 @@ export default Component.extend({
     }
   })),
 
-  updateTickFormat: on('init', observer('tickFormat', function() {
+  tickFormatChanged: on('init', observer('tickFormat', function() {
     let tickFormat = this.get('tickFormat');
 
     if(tickFormat) {
@@ -56,7 +56,7 @@ export default Component.extend({
     }
   })),
 
-  updateTickPadding: on('init', observer('tickPadding', function() {
+  tickPaddingChanged: on('init', observer('tickPadding', function() {
     let tickPadding = this.get('tickPadding');
 
     if(tickPadding) {
@@ -74,20 +74,11 @@ export default Component.extend({
     d3.select(id).transition().call(this.get('axis'));
 
     if(this.get('grid')) {
-      this.updateGrid();
-    }
-  },
-
-  updateGrid() {
-    var id = "#" + this.elementId;
-    d3.selectAll(id + " g.tick").select("line.grid-line").remove();
-
-    if(this.get('grid')) {
-      var x1 = this.get('grid.x1');
-      var x2 = this.get('grid.x2');
-      var y1 = this.get('grid.y1');
-      var y2 = this.get('grid.y2');
-
+      d3.selectAll(id + " g.tick").select("line.grid-line").remove();
+      let x1 = this.get('grid.x1');
+      let x2 = this.get('grid.x2');
+      let y1 = this.get('grid.y1');
+      let y2 = this.get('grid.y2');
       d3.selectAll(id + " g.tick").append("line").classed("grid-line", true).attr("x1", x1).attr("y1", y1).attr("x2", x2).attr("y2", y2);
     }
   }
