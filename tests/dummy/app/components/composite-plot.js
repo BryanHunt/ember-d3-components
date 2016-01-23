@@ -3,6 +3,7 @@ import BarPlotter from '../utils/d3-bar-plotter';
 import XYLinePlotter from '../utils/d3-xy-line-plotter';
 import CompositePlotter from '../utils/d3-composite-plotter';
 import LinearScale from '../utils/d3-scale-linear';
+import OrdinalScale from '../utils/d3-scale-ordinal';
 
 const { Component, observer } = Ember;
 
@@ -16,13 +17,13 @@ export default Component.extend({
   yGrid: Ember.Object.create({x1: 0, y1: 0, x2: 450, y2: 0}),
 
   plotter: CompositePlotter.create({
-    xScale: LinearScale.create({domain: [0, 3], range: [0, 450]}),
+    xScale: OrdinalScale.create({domain: ["Apples", "Oranges", "Bananas"], rangeBands: [0, 450]}),
     yScale: LinearScale.create({domain: [100, 0], range: [0, 450]}),
     width: 450,
     height: 450,
     children: [
-      BarPlotter.create({ data: [{x: 0, y: 10}, {x: 1, y: 20}, {x: 2, y:35}]  }),
-      XYLinePlotter.create({ data: [[{x: 0, y: 10}, {x: 1, y: 20}, {x: 2, y:35}]] })
+      BarPlotter.create({ data: [{x: "Apples", y: 10}, {x: "Oranges", y: 20}, {x: "Bananas", y:35}]  }),
+      XYLinePlotter.create({ data: [[{x: "Apples", y: 20}, {x: "Oranges", y: 40}, {x: "Bananas", y:80}]] })
     ]}),
 
   updateXScale: observer('xMax', function() {
