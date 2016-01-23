@@ -1,5 +1,4 @@
 import Ember from 'ember';
-import layout from '../templates/components/d3-plot';
 
 const { Component } = Ember;
 
