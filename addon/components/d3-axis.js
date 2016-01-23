@@ -38,11 +38,38 @@ export default Component.extend({
     }
   })),
 
-  tickSubdivideChanged: on('init', observer('tickSubdivide', function() {
-    let tickSubdivide = this.get('tickSubdivide');
+  tickValuesChanged: on('init', observer('tickValues', function() {
+    let tickValues = this.get('tickValues');
 
-    if(tickSubdivide) {
-      this.get('axis').tickSubdivide(tickSubdivide);
+    if(tickValues) {
+      this.get('axis').tickValues(tickValues);
+      Ember.run.once(this, this.updateAxis);
+    }
+  })),
+
+  tickSizeChanged: on('init', observer('tickSize', function() {
+    let tickSize = this.get('tickSize');
+
+    if(tickSize) {
+      this.get('axis').tickSize(tickSize);
+      Ember.run.once(this, this.updateAxis);
+    }
+  })),
+
+  innerTickSizeChanged: on('init', observer('innerTickSize', function() {
+    let innerTickSize = this.get('innerTickSize');
+
+    if(innerTickSize) {
+      this.get('axis').innerTickSize(innerTickSize);
+      Ember.run.once(this, this.updateAxis);
+    }
+  })),
+
+  outerTickSizeChanged: on('init', observer('outerTickSize', function() {
+    let outerTickSize = this.get('outerTickSize');
+
+    if(outerTickSize) {
+      this.get('axis').outerTickSize(outerTickSize);
       Ember.run.once(this, this.updateAxis);
     }
   })),
