@@ -12,6 +12,7 @@ export default Ember.Object.extend({
 
     if(domain) {
       this.get('scale').domain(domain);
+      Ember.run.once(this, 'notifyPropertyChange', 'scale');
     }
   })),
 
@@ -20,6 +21,7 @@ export default Ember.Object.extend({
 
     if(range) {
       this.get('scale').range(range);
+      Ember.run.once(this, 'notifyPropertyChange', 'scale');
     }
   })),
 
@@ -28,6 +30,7 @@ export default Ember.Object.extend({
 
     if(rangeRound) {
       this.get('scale').rangeRound(rangeRound);
+      Ember.run.once(this, 'notifyPropertyChange', 'scale');
     }
   })),
 
@@ -36,6 +39,7 @@ export default Ember.Object.extend({
 
     if(interpolate) {
       this.get('scale').interpolate(interpolate);
+      Ember.run.once(this, 'notifyPropertyChange', 'scale');
     }
   })),
 
@@ -44,6 +48,7 @@ export default Ember.Object.extend({
 
     if(clamp) {
       this.get('scale').clamp(clamp);
+      Ember.run.once(this, 'notifyPropertyChange', 'scale');
     }
   })),
 
@@ -52,6 +57,7 @@ export default Ember.Object.extend({
 
     if(nice) {
       this.get('scale').nice(nice);
+      Ember.run.once(this, 'notifyPropertyChange', 'scale');
     }
   }))
 });

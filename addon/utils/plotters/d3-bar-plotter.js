@@ -3,7 +3,11 @@ import Ember from 'ember';
 const { observer } = Ember;
 
 export default Ember.Object.extend({
-  plot: observer('svg', 'xScale.scale', 'yScale.scale', 'data', 'width', 'height', 'barWidthTransform', function() {
+  propertyChanged: observer('svg', 'xScale.scale', 'yScale.scale', 'data', 'width', 'height', 'barWidthTransform', function() {
+    Ember.run.once(this, 'plot');
+  }),
+
+  plot() {
     let svg = this.get('svg');
     let xScale = this.get('xScale.scale');
     let yScale = this.get('yScale.scale');
@@ -22,5 +26,5 @@ export default Ember.Object.extend({
                                         .attr("height", (dataPoint) => {return height - yScale(dataPoint.y);})
                                         .attr("width", (dataPoint) => {return barWidthTransform(dataPoint, xScale);});
     svg.selectAll("rect.bar").data(data).exit().remove();
-  })
+  }
 });
