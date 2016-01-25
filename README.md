@@ -1,7 +1,6 @@
 # Ember-d3
 
 This addon provides EmberJS components for visualizing data with d3.js.
-================
 
 See it in action: http://bryanhunt.github.io/d3
 
