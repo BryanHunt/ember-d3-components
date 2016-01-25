@@ -24,7 +24,7 @@ export default Component.extend({
     barWidthTransform: function(dataPoint, xScale) {return xScale.rangeBand();}
   }),
 
-  updateYScale: observer('yMax', function() {
+  yMaxChanged: observer('yMax', function() {
     this.set('plotter.yScale.domain', [this.get('yMax'), 0]);
   })
 });

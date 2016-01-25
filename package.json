@@ -1,9 +1,8 @@
 {
-  "name": "ember-d3",
-  "version": "0.0.0",
-  "description": "The default blueprint for ember-cli addons.",
+  "name": "ember-d3-components",
+  "version": "0.0.1",
+  "description": "EmberJS components for creating d3 charts",
   "directories": {
-    "doc": "doc",
     "test": "tests"
   },
   "scripts": {
@@ -11,11 +10,14 @@
     "start": "ember server",
     "test": "ember try:testall"
   },
-  "repository": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BryanHunt/ember-d3.git"
+  },
   "engines": {
     "node": ">= 0.10.0"
   },
-  "author": "",
+  "author": "Bryan Hunt",
   "license": "MIT",
   "devDependencies": {
     "broccoli-asset-rev": "^2.2.0",
@@ -45,5 +47,9 @@
   },
   "ember-addon": {
     "configPath": "tests/dummy/config"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/BryanHunt/ember-d3/issues"
+  },
+  "homepage": "https://github.com/BryanHunt/ember-d3#readme"
 }

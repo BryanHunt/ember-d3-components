@@ -26,11 +26,11 @@ export default Component.extend({
       XYLinePlotter.create({ data: [[{x: "Apples", y: 20}, {x: "Oranges", y: 40}, {x: "Bananas", y:80}]] })
     ]}),
 
-  updateXScale: observer('xMax', function() {
+  xMaxChanged: observer('xMax', function() {
     this.set('plotter.xScale.domain', [0, this.get('xMax')]);
   }),
 
-  updateYScale: observer('yMax', function() {
+  yMaxChanged: observer('yMax', function() {
     this.set('plotter.yScale.domain', [this.get('yMax'), 0]);
   })
 });

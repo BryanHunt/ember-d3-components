@@ -46,7 +46,7 @@ export default Ember.Object.extend({
   clampChanged: on('init', observer('clamp', function() {
     let clamp = this.get('clamp');
 
-    if(clamp) {
+    if(clamp != null) {
       this.get('scale').clamp(clamp);
       Ember.run.once(this, 'notifyPropertyChange', 'scale');
     }
@@ -55,7 +55,7 @@ export default Ember.Object.extend({
   niceChanged: on('init', observer('nice', function() {
     let nice = this.get('nice');
 
-    if(nice) {
+    if(nice != null) {
       this.get('scale').nice(nice);
       Ember.run.once(this, 'notifyPropertyChange', 'scale');
     }
