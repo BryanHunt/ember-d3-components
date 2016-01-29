@@ -2,5 +2,5 @@
 'use strict';
 
 module.exports = {
-  name: 'ember-d3'
+  name: 'ember-d3-components'
 };

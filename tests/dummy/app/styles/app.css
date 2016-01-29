@@ -27,7 +27,7 @@ button {
   vertical-align:top;
 }
 
-.ember-d3 {
+.ember-d3-components {
   width: 600px;
   display: inline-block;
 }
@@ -164,6 +164,14 @@ button {
     stroke: black;
     shape-rendering: crispEdges;
     stroke-opacity: .2;
+}
+
+.grid .tick line {
+  stroke: lightgrey;
+}
+
+.grid path {
+  stroke-width: 0;
 }
 
 .line{

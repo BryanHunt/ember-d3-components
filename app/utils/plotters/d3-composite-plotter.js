@@ -1,1 +1,1 @@
-export { default } from 'ember-d3/utils/plotters/d3-composite-plotter';
+export { default } from 'ember-d3-components/utils/plotters/d3-composite-plotter';

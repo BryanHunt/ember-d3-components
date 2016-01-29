@@ -6,9 +6,10 @@ const { Component, observer } = Ember;
 
 export default Component.extend({
   init() {
+    this._super.apply(this, arguments);
     this.set('xMax', 100);
     this.set('yMax', 100);
-  }
+  },
 
   plotter: XYLinePlotter.create({
     xScale: LinearScale.create({domain: [0, 100], range: [0, 450]}),

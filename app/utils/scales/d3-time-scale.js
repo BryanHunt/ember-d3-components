@@ -1,1 +1,1 @@
-export { default } from 'ember-d3/utils/scales/d3-time-scale';
+export { default } from 'ember-d3-components/utils/scales/d3-time-scale';

@@ -4,9 +4,11 @@
       <rect x=-5 y=0 width=455 height=440></rect>
     </clippath>
   </defs>
+  {{d3-grid class="grid" orientation="bottom" scale=plotter.xScale width=450 height=450}}
+  {{d3-grid class="grid" orientation="left" scale=plotter.yScale width=450 height=450}}
   {{d3-axis class="x-axis" orientation="bottom" scale=plotter.xScale translateX=25 translateY=475}}
   {{d3-axis class="y-axis" orientation="left" scale=plotter.yScale translateX=25 translateY=25}}
-  {{d3-plot transform="translate(25,25)" clip-path="url(#clip-body)" plotter=plotter}}
+  {{d3-plot clip-path="url(#clip-body)" plotter=plotter translateX=25 translateY=25}}
 </svg>
 
 <br>

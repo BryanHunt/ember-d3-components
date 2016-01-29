@@ -1,10 +1,10 @@
-# Ember-d3
+# Ember D3 Components
 
 This addon provides EmberJS components for visualizing data with d3.js.
 
 See it in action: http://bryanhunt.github.io/#/d3
 
-There is a demo app in [tests/dummy](https://github.com/BryanHunt/ember-d3/tree/master/tests/dummy).
+There is a demo app in [tests/dummy](https://github.com/BryanHunt/ember-d3-components/tree/master/tests/dummy).
 
 This project is very much in the experimental phase.  Use with caution.
 

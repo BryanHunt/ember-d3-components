@@ -1,1 +1,1 @@
-export { default } from 'ember-d3/components/d3-axis';
+export { default } from 'ember-d3-components/components/d3-axis';

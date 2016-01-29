@@ -1,8 +1,9 @@
 import Ember from 'ember';
+import Translatable from '../mixins/translatable';
 
 const { Component, on, observer, computed } = Ember;
 
-export default Component.extend({
+export default Component.extend(Translatable, {
   tagName: 'g',
   attributeBindings: ['transform'],
 
@@ -92,14 +93,7 @@ export default Component.extend({
     }
   })),
 
-  transform: computed('translateX', 'translateY', function() {
-    let translateX = this.get('translateX');
-    let translateY = this.get('translateY');
-
-    if(translateX !== undefined && translateY !== undefined) {
-      return `translate(${translateX}, ${translateY})`;
-    }
-  }),
+  transform: computed.alias('translation'),
 
   updateAxis() {
     var id = "#" + this.elementId;
