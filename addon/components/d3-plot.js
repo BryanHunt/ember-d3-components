@@ -12,4 +12,8 @@ export default Component.extend(Translatable, {
   },
 
   transform: computed.alias('translation'),
+
+  'clip-path': computed('parentView.clipPath', function() {
+    return `url(${this.get('parentView.clipPath')})`;
+  })
 });

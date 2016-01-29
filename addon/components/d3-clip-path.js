@@ -6,6 +6,8 @@ export default Component.extend({
   tagName: 'clipPath',
 
   didInsertElement() {
-    this.set('parentView.clipPath', this.elementId);
+    Ember.run.next(this, function() {
+      this.set('parentView.clipPath', "#" + this.elementId);
+    });
   }
 });

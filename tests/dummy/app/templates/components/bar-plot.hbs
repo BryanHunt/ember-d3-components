@@ -1,13 +1,13 @@
-<svg class="axis" width=500 height=500>
+{{#d3-svg class="axis" width=500 height=500}}
   <defs>
-    <clippath id="clip-body">
+    {{#d3-clip-path}}
       <rect x=-5 y=0 width=455 height=440></rect>
-    </clippath>
+    {{/d3-clip-path}}
   </defs>
-  {{d3-axis class="x-axis" orientation="bottom" scale=plotter.xScale transform=xAxisTransform grid=xGrid}}
-  {{d3-axis class="y-axis" orientation="left" scale=plotter.yScale transform=yAxisTransform grid=yGrid}}
-  {{d3-plot transform="translate(25,25)" clip-path="url(#clip-body)" plotter=plotter redraw=redraw}}
-</svg>
+  {{d3-axis class="x-axis" orientation="bottom" scale=plotter.xScale translateX=25 translateY=475}}
+  {{d3-axis class="y-axis" orientation="left" scale=plotter.yScale translateX=25 translateY=25}}
+  {{d3-plot plotter=plotter translateX=25 translateY=25}}
+{{/d3-svg}}
 
 <br>
 Y Max {{input value=yMax}}

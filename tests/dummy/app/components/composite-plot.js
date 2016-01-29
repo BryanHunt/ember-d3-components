@@ -22,7 +22,7 @@ export default Component.extend({
     width: 450,
     height: 450,
     children: [
-      BarPlotter.create({ data: [{x: "Apples", y: 10}, {x: "Oranges", y: 20}, {x: "Bananas", y:35}]  }),
+      BarPlotter.create({ data: [{x: "Apples", y: 10}, {x: "Oranges", y: 20}, {x: "Bananas", y:35}], barWidthTransform: function(dataPoint, xScale) {return xScale.rangeBand();} }),
       XYLinePlotter.create({ data: [[{x: "Apples", y: 20}, {x: "Oranges", y: 40}, {x: "Bananas", y:80}]] })
     ]}),
 
