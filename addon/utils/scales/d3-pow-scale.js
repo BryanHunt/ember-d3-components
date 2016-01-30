@@ -5,7 +5,7 @@ const { on, observer } = Ember;
 
 export default Scale.extend({
   init() {
-    this.set('scale', d3.scale.linear());
+    this.set('scale', d3.scale.pow());
   },
 
   rangeRoundChanged: on('init', observer('rangeRound', function() {
@@ -13,6 +13,15 @@ export default Scale.extend({
 
     if(rangeRound) {
       this.get('scale').rangeRound(rangeRound);
+      Ember.run.once(this, 'notifyPropertyChange', 'scale');
+    }
+  })),
+
+  exponentChanged: on('init', observer('exponent', function() {
+    let exponent = this.get('exponent');
+
+    if(exponent) {
+      this.get('scale').exponent(exponent);
       Ember.run.once(this, 'notifyPropertyChange', 'scale');
     }
   })),

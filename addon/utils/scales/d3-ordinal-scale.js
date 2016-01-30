@@ -1,4 +1,5 @@
 import Ember from 'ember';
+import Scale from './d3-scale';
 
 const { on, observer } = Ember;
 
@@ -6,24 +7,6 @@ export default Ember.Object.extend({
   init() {
     this.set('scale', d3.scale.ordinal());
   },
-
-  domainChanged: on('init', observer('domain', function() {
-    let domain = this.get('domain');
-
-    if(domain) {
-      this.get('scale').domain(domain);
-      Ember.run.once(this, 'notifyPropertyChange', 'scale');
-    }
-  })),
-
-  rangeChanged: on('init', observer('range', function() {
-    let range = this.get('range');
-
-    if(range) {
-      this.get('scale').range(range);
-      Ember.run.once(this, 'notifyPropertyChange', 'scale');
-    }
-  })),
 
   rangePointsChanged: on('init', observer('rangePoints', 'padding', function() {
     let rangePoints = this.get('rangePoints');

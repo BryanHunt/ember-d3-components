@@ -5,7 +5,7 @@ const { on, observer } = Ember;
 
 export default Scale.extend({
   init() {
-    this.set('scale', d3.scale.linear());
+    this.set('scale', d3.scale.log());
   },
 
   rangeRoundChanged: on('init', observer('rangeRound', function() {
@@ -13,6 +13,15 @@ export default Scale.extend({
 
     if(rangeRound) {
       this.get('scale').rangeRound(rangeRound);
+      Ember.run.once(this, 'notifyPropertyChange', 'scale');
+    }
+  })),
+
+  baseChanged: on('init', observer('base', function() {
+    let base = this.get('base');
+
+    if(base) {
+      this.get('scale').base(base);
       Ember.run.once(this, 'notifyPropertyChange', 'scale');
     }
   })),
