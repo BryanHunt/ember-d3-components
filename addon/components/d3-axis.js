@@ -93,6 +93,15 @@ export default Component.extend(Translatable, {
     }
   })),
 
+  translation: computed('translateX', 'translateY', function() {
+    let translateX = this.get('translateX');
+    let translateY = this.get('translateY');
+
+    if(translateX !== undefined && translateY !== undefined) {
+      return `translate(${translateX}, ${translateY})`;
+    }
+  }),
+
   transform: computed.alias('translation'),
 
   updateAxis() {
