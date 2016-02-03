@@ -10,7 +10,8 @@ export default Ember.Object.extend({
 
   rangePointsChanged: on('init', observer('rangePoints', 'padding', function() {
     let rangePoints = this.get('rangePoints');
-
+    let padding = this.get('padding');
+    
     if(rangePoints) {
       if(padding) {
         this.get('scale').rangePoints(rangePoints, padding);
