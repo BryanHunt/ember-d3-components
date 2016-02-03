@@ -19,7 +19,7 @@ export default Axis.extend({
     let yOffset = this.get('yOffset');
 
     if(yOffset !== undefined) {
-      translateY += yOffset
+      translateY += yOffset;
     }
 
     if(orientation === 'top' || orientation === 'bottom') {

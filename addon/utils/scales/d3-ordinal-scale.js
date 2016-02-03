@@ -3,7 +3,7 @@ import Scale from './d3-scale';
 
 const { on, observer } = Ember;
 
-export default Ember.Object.extend({
+export default Scale.extend({
   init() {
     this.set('scale', d3.scale.ordinal());
   },
@@ -11,7 +11,7 @@ export default Ember.Object.extend({
   rangePointsChanged: on('init', observer('rangePoints', 'padding', function() {
     let rangePoints = this.get('rangePoints');
     let padding = this.get('padding');
-    
+
     if(rangePoints) {
       if(padding) {
         this.get('scale').rangePoints(rangePoints, padding);
@@ -31,7 +31,7 @@ export default Ember.Object.extend({
       if(padding) {
         this.get('scale').rangeRoundPoints(rangeRoundPoints, padding);
       } else {
-        this.get('scale').rangeRoundPoints(rangePoints);
+        this.get('scale').rangeRoundPoints(rangeRoundPoints);
       }
 
       Ember.run.once(this, 'notifyPropertyChange', 'scale');
