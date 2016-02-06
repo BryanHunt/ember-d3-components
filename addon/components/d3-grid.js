@@ -22,8 +22,11 @@ export default Axis.extend({
       translateY += yOffset;
     }
 
-    if(orientation === 'top' || orientation === 'bottom') {
+    if(orientation === 'bottom') {
       translateY += this.get('height');
+    }
+
+    if(orientation === 'top' || orientation === 'bottom') {
       this.set('translateY', translateY);
       this.set('innerTickSize', -this.get('height'));
     } else {
