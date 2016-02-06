@@ -9,28 +9,16 @@ export default Axis.extend({
     this.set('tickFormat', "");
   },
 
-  parametersChanged: on('init', observer('width', 'height', 'orientation', 'yOffset', function() {
+  parametersChanged: on('init', observer('width', 'height', 'orientation', function() {
     Ember.run.once(this, this.updateGrid);
   })),
 
   updateGrid() {
     let orientation = this.get('orientation');
-    let translateY = 0;
-    let yOffset = this.get('yOffset');
-
-    if(yOffset !== undefined) {
-      translateY += yOffset;
-    }
-
-    if(orientation === 'bottom') {
-      translateY += this.get('height');
-    }
 
     if(orientation === 'top' || orientation === 'bottom') {
-      this.set('translateY', translateY);
       this.set('innerTickSize', -this.get('height'));
     } else {
-      this.set('translateY', translateY);
       this.set('innerTickSize', -this.get('width'));
     }
   }
