@@ -9,7 +9,7 @@ export default Axis.extend({
     this.set('tickFormat', "");
   },
 
-  updateTransform: on('init', observer('width', 'height', 'orientation', function() {
+  parametersChanged: on('init', observer('width', 'height', 'orientation', 'yOffset', function() {
     Ember.run.once(this, this.updateGrid);
   })),
 
