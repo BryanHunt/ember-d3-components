@@ -8,7 +8,7 @@ export default Scale.extend({
     this.set('scale', d3.scale.ordinal());
   },
 
-  rangePointsChanged: on('init', observer('rangePoints', 'padding', function() {
+  rangePointsChanged: on('init', observer('rangePoints.[]', 'padding', function() {
     let rangePoints = this.get('rangePoints');
     let padding = this.get('padding');
 
@@ -23,7 +23,7 @@ export default Scale.extend({
     }
   })),
 
-  rangeRoundPointsChanged: on('init', observer('rangeRoundPoints', 'padding', function() {
+  rangeRoundPointsChanged: on('init', observer('rangeRoundPoints.[]', 'padding', function() {
     let rangeRoundPoints = this.get('rangeRoundPoints');
     let padding = this.get('padding');
 
@@ -38,7 +38,7 @@ export default Scale.extend({
     }
   })),
 
-  rangeBandsChanged: on('init', observer('rangeBands', 'padding', 'outerPadding', function() {
+  rangeBandsChanged: on('init', observer('rangeBands.[]', 'padding', 'outerPadding', function() {
     let rangeBands = this.get('rangeBands');
     let padding = this.get('padding');
     let outerPadding = this.get('outerPadding');
@@ -58,7 +58,7 @@ export default Scale.extend({
     }
   })),
 
-  rangeRoundBandsChanged: on('init', observer('rangeRoundBands', 'padding', 'outerPadding', function() {
+  rangeRoundBandsChanged: on('init', observer('rangeRoundBands.[]', 'padding', 'outerPadding', function() {
     let rangeRoundBands = this.get('rangeRoundBands');
     let padding = this.get('padding');
     let outerPadding = this.get('outerPadding');

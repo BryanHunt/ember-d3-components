@@ -8,7 +8,7 @@ export default Scale.extend({
     this.set('scale', d3.scale.linear());
   },
 
-  rangeRoundChanged: on('init', observer('rangeRound', function() {
+  rangeRoundChanged: on('init', observer('rangeRound.[]', function() {
     let rangeRound = this.get('rangeRound');
 
     if(rangeRound) {
