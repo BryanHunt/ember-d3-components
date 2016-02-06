@@ -15,7 +15,7 @@ export default Ember.Object.extend({
     Ember.run.once(this, 'plot');
   })),
 
-  xScaleUpdated: on('init', observer('xScale.scale', function() {
+  xScaleUpdated: on('init', observer('xScale', 'xScale.scale', function() {
     let scale = this.get('xScale.scale');
 
     if(scale) {
@@ -24,7 +24,7 @@ export default Ember.Object.extend({
     }
   })),
 
-  yScaleUpdated: on('init', observer('yScale.scale', function() {
+  yScaleUpdated: on('init', observer('yScale', 'yScale.scale', function() {
     let scale = this.get('yScale.scale');
 
     if(scale) {
@@ -36,8 +36,10 @@ export default Ember.Object.extend({
   plot() {
     let svg = this.get('svg');
     let data = this.get('data');
+    let xScale = this.get('xScale');
+    let yScale = this.get('yScale');
 
-    if(!svg || !data) {
+    if(!svg || !data || !xScale || !yScale) {
       return;
     }
 
