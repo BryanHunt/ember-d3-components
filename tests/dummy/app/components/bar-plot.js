@@ -15,14 +15,21 @@ export default Component.extend({
   xGrid: Ember.Object.create({x1: 0, y1: 0, x2: 0, y2: -450}),
   yGrid: Ember.Object.create({x1: 0, y1: 0, x2: 450, y2: 0}),
 
-  plotter: BarPlotter.create({
-    xScale: OrdinalScale.create({domain: ["Apples", "Oranges", "Bananas"], rangeBands: [0, 450], padding: 0.2}),
-    yScale: LinearScale.create({domain: [100, 0], range: [0, 450]}),
-    data: [{x: "Apples", y: 10}, {x: "Oranges", y: 20}, {x: "Bananas", y:35}],
-    width: 450,
-    height: 450,
-    barWidthTransform: function(dataPoint, xScale) {return xScale.rangeBand();}
-  }),
+  init() {
+    this._super.apply(this, arguments);
+    this.set('plotters', Ember.A());
+
+    let plotter = BarPlotter.create({
+      xScale: OrdinalScale.create({domain: ["Apples", "Oranges", "Bananas"], rangeBands: [0, 450], padding: 0.2}),
+      yScale: LinearScale.create({domain: [100, 0], range: [0, 450]}),
+      data: [{x: "Apples", y: 10}, {x: "Oranges", y: 20}, {x: "Bananas", y:35}],
+      width: 450,
+      height: 450,
+      barWidthTransform: function(dataPoint, xScale) {return xScale.rangeBand();}
+    });
+
+    this.get('plotters').pushObject(plotter);
+  },
 
   yMaxChanged: observer('yMax', function() {
     this.set('plotter.yScale.domain', [this.get('yMax'), 0]);

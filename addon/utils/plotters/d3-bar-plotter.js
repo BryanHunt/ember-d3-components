@@ -7,6 +7,16 @@ export default Ember.Object.extend({
     Ember.run.once(this, 'plot');
   }),
 
+  destroy() {
+    let svg = this.get('svg');
+
+    if(svg) {
+      svg.selectAll("rect.bar").remove();
+    }
+
+    return this._super.destroy();
+  },
+
   plot() {
     let svg = this.get('svg');
     let xScale = this.get('xScale.scale');

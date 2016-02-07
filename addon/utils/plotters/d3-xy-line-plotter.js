@@ -7,6 +7,16 @@ export default Ember.Object.extend({
     this.set('line', d3.svg.line());
   },
 
+  destroy() {
+    let svg = this.get('svg');
+
+    if(svg) {
+      svg.selectAll("path.line").remove();
+    }
+
+    return this._super.destroy();
+  },
+
   svgUpdated: on('init', observer('svg', function() {
     Ember.run.once(this, 'plot');
   })),
