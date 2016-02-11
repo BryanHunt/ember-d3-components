@@ -4,14 +4,21 @@
       <rect x=0 y=0 width=455 height=440></rect>
     {{/d3-clip-path}}
   </defs>
-  {{d3-grid class="grid" orientation="bottom" scale=plotters.0.xScale width=450 height=450 translateX=25 translateY=475}}
-  {{d3-grid class="grid" orientation="left" scale=plotters.0.yScale width=450 height=450 translateX=25 translateY=25}}
-  {{d3-axis class="x-axis" orientation="bottom" scale=plotters.0.xScale translateX=25 translateY=475}}
-  {{d3-axis class="y-axis" orientation="left" scale=plotters.0.yScale translateX=25 translateY=25}}
-  {{d3-plot plotters=plotters translateX=25 translateY=25}}
+  {{d3-grid class="grid" orientation="bottom" scale=xScale width=450 height=450 translateX=25 translateY=475}}
+  {{d3-grid class="grid" orientation="left" scale=yScale width=450 height=450 translateX=25 translateY=25}}
+  {{d3-axis class="x-axis" orientation="bottom" scale=xScale translateX=25 translateY=475}}
+  {{d3-axis class="y-axis" orientation="left" scale=yScale translateX=25 translateY=25}}
+  {{#d3-plot translateX=25 translateY=25}}
+    {{d3-line xScale=xScale yScale=yScale data=lineData}}
+    {{#if showDots}}
+      {{d3-circles xScale=xScale yScale=yScale data=circleData}}
+    {{/if}}
+  {{/d3-plot}}
 {{/d3-svg}}
 
 <br>
 X Max {{input value=xMax}}
 <br>
 Y Max {{input value=yMax}}
+<br>
+{{input type="checkbox" checked=showDots}}Show Dots

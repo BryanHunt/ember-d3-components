@@ -4,9 +4,11 @@
       <rect x=-5 y=0 width=455 height=440></rect>
     {{/d3-clip-path}}
   </defs>
-  {{d3-axis class="x-axis" orientation="bottom" scale=plotters.0.xScale translateX=25 translateY=475}}
-  {{d3-axis class="y-axis" orientation="left" scale=plotters.0.yScale translateX=25 translateY=25}}
-  {{d3-plot plotters=plotters translateX=25 translateY=25}}
+  {{d3-axis class="x-axis" orientation="bottom" scale=xScale translateX=25 translateY=475}}
+  {{d3-axis class="y-axis" orientation="left" scale=yScale translateX=25 translateY=25}}
+  {{#d3-plot translateX=25 translateY=25}}
+    {{d3-bar xScale=xScale yScale=yScale barWidthTransform=barWidthTransform width=450 height=450 data=data}}
+  {{/d3-plot}}
 {{/d3-svg}}
 
 <br>

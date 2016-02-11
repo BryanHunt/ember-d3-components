@@ -1,35 +1,15 @@
 import Ember from 'ember';
+//import D3Component from './d3-component';
+import D3Group from './d3-group';
 import Translatable from '../mixins/translatable';
 
-const { Component, computed, observer } = Ember;
+const { computed, observer } = Ember;
 
-export default Component.extend(Translatable, {
-  tagName: 'g',
+export default D3Group.extend(Translatable, {
   attributeBindings: ['transform', 'clip-path'],
-
-  didInsertElement() {
-    this.set('svg', d3.select("#" + this.elementId));
-    Ember.run.once(this, 'updatePlotters')
-  },
-
-  plottersChanged: observer('plotters.[]', function() {
-    Ember.run.once(this, 'updatePlotters');
-  }),
-
   transform: computed.alias('translation'),
 
   'clip-path': computed('parentView.clipPath', function() {
     return `url(${this.get('parentView.clipPath')})`;
-  }),
-
-  updatePlotters() {
-    let svg = this.get('svg');
-    let plotters = this.get('plotters');
-
-    if(svg && plotters) {
-      plotters.forEach((plotter) => {
-        plotter.set('svg', svg);
-      });
-    }
-  }
+  })
 });

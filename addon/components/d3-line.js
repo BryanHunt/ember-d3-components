@@ -1,25 +1,18 @@
 import Ember from 'ember';
+import D3Group from './d3-group';
 
 const { on, observer } = Ember;
 
-export default Ember.Object.extend({
+export default D3Group.extend({
   init() {
+    this._super.apply(this, arguments);
     this.set('line', d3.svg.line());
   },
 
-  destroy() {
-    let svg = this.get('svg');
-
-    if(svg) {
-      svg.selectAll("path.line").remove();
-    }
-
-    return this._super.destroy();
-  },
-
-  svgUpdated: on('init', observer('svg', function() {
+  didInsertElement() {
+    this._super.apply(this, arguments);
     Ember.run.once(this, 'plot');
-  })),
+  },
 
   dataUpdated: on('init', observer('data', function() {
     Ember.run.once(this, 'plot');
@@ -44,19 +37,20 @@ export default Ember.Object.extend({
   })),
 
   plot() {
-    let svg = this.get('svg');
+    let d3Selection = this.get('d3Selection');
     let data = this.get('data');
     let xScale = this.get('xScale');
     let yScale = this.get('yScale');
 
-    if(!svg || !data || !xScale || !yScale) {
+    if(!d3Selection || !data || !xScale || !yScale) {
       return;
     }
 
     let line = this.get('line');
+    let d3data = d3Selection.selectAll("path.line").data(data);
 
-    svg.selectAll("path.line").data(data).enter().append("path").attr("class", "line");
-    svg.selectAll("path.line").data(data).attr("d", (dataPoint) => {return line(dataPoint);});
-    svg.selectAll("path.line").data(data).exit().remove();
+    d3data.enter().append("path").attr("class", "line");
+    d3data.attr("d", (dataPoint) => {return line(dataPoint);});
+    d3data.exit().remove();
   }
 });
