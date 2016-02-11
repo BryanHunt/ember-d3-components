@@ -6,7 +6,10 @@ See it in action: http://bryanhunt.github.io/#/d3
 
 There is a demo app in [tests/dummy](https://github.com/BryanHunt/ember-d3-components/tree/master/tests/dummy).
 
-This project is very much in the experimental phase.  Use with caution.
+This project is very much in the experimental phase and the API is in flux.  
+Use with caution.
+
+This is a fairly significant undertaking and I would welcome additional contributors.
 
 This README outlines the details of collaborating on this Ember addon.
 
