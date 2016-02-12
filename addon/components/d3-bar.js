@@ -27,29 +27,31 @@ export default D3Group.extend({
       return;
     }
 
+    var x, y, width, height;
+
     if(orientation === "bottom" || orientation === "top") {
-      var range = this.get('yScale.range');
-      var x = (dataPoint) => {return xScale(dataPoint[dataX]);};
-      var width = (dataPoint) => {return barWidthTransform(dataPoint, xScale);};
+      let range = this.get('yScale.range');
+      x = (dataPoint) => {return xScale(dataPoint[dataX]);};
+      width = (dataPoint) => {return barWidthTransform(dataPoint, xScale);};
 
       if(orientation === "bottom") {
-        var y = (dataPoint) => {return yScale(dataPoint[dataY]);};
-        var height = (dataPoint) => {return range[range.length - 1] - yScale(dataPoint[dataY]);};
+        y = (dataPoint) => {return yScale(dataPoint[dataY]);};
+        height = (dataPoint) => {return range[range.length - 1] - yScale(dataPoint[dataY]);};
       } else {
-        var y = (dataPoint) => {return 0;};
-        var height = (dataPoint) => {return yScale(dataPoint[dataY]);};
+        y = () => {return 0;};
+        height = (dataPoint) => {return yScale(dataPoint[dataY]);};
       }
     } else {
-      var range = this.get('xScale.range');
-      var y = (dataPoint) => {return yScale(dataPoint[dataX]);};
-      var height = (dataPoint) => {return barWidthTransform(dataPoint, yScale);};
+      let range = this.get('xScale.range');
+      y = (dataPoint) => {return yScale(dataPoint[dataX]);};
+      height = (dataPoint) => {return barWidthTransform(dataPoint, yScale);};
 
       if(orientation === "left") {
-        var x = (dataPoint) => {return 0;};
-        var width = (dataPoint) => {return xScale(dataPoint[dataY]);};
+        x = () => {return 0;};
+        width = (dataPoint) => {return xScale(dataPoint[dataY]);};
       } else {
-        var x = (dataPoint) => {return xScale(dataPoint[dataY]);};
-        var width = (dataPoint) => {return range[range.length - 1] - xScale(dataPoint[dataY]);};
+        x = (dataPoint) => {return xScale(dataPoint[dataY]);};
+        width = (dataPoint) => {return range[range.length - 1] - xScale(dataPoint[dataY]);};
       }
     }
 
