@@ -8,7 +8,7 @@ export default D3Group.extend({
   dataX: "x",
   dataY: "y",
 
-  propertyChanged: observer('d3Selection', 'xScale', 'yScale', 'data', 'barWidthTransform', function() {
+  propertyChanged: observer('d3Selection', 'xScale', 'xScale.scale', 'yScale', 'yScale.scale', 'data', 'barWidthTransform', function() {
     Ember.run.once(this, 'plot');
   }),
 
@@ -56,7 +56,7 @@ export default D3Group.extend({
     let d3Data = d3Selection.selectAll("rect.bar").data(data)
 
     d3Data.enter().append("rect").attr("class", "bar");
-    d3Data.attr("x", x).attr("y", y).attr("height", height).attr("width", width);
+    d3Data.transition().attr("x", x).attr("y", y).attr("height", height).attr("width", width);
     d3Data.exit().remove();
   }
 });

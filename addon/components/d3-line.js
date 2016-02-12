@@ -16,7 +16,7 @@ export default D3Group.extend({
     Ember.run.once(this, 'plot');
   }),
 
-  xScaleUpdated: on('init', observer('xScale', function() {
+  xScaleUpdated: on('init', observer('xScale', 'xScale.scale', function() {
     let scale = this.get('xScale.scale');
     let dataX = this.get('dataX');
 
@@ -26,7 +26,7 @@ export default D3Group.extend({
     }
   })),
 
-  yScaleUpdated: on('init', observer('yScale', function() {
+  yScaleUpdated: on('init', observer('yScale', 'yScale.scale', function() {
     let scale = this.get('yScale.scale');
     let dataY = this.get('dataY');
 
@@ -50,7 +50,7 @@ export default D3Group.extend({
     let d3data = d3Selection.selectAll("path.line").data(data);
 
     d3data.enter().append("path").attr("class", "line");
-    d3data.attr("d", (dataPoint) => {return line(dataPoint);});
+    d3data.transition().attr("d", (dataPoint) => {return line(dataPoint);});
     d3data.exit().remove();
   }
 });
