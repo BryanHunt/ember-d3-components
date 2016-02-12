@@ -19,7 +19,7 @@ export default Component.extend({
 
     this.set('xGrid', Ember.Object.create({x1: 0, y1: 0, x2: 0, y2: -450}));
     this.set('yGrid', Ember.Object.create({x1: 0, y1: 0, x2: 450, y2: 0}));
-    this.set('data', [{group: "Apples", value: 10}, {group: "Oranges", value: 20}, {group: "Bananas", value:35}]);
+    this.set('data', [{x: "Apples", y: 10}, {x: "Oranges", y: 20}, {x: "Bananas", y:35}]);
     this.set('barWidthTransform', function(dataPoint, scale) {return scale.rangeBand();});
   },
 
