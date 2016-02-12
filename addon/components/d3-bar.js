@@ -4,7 +4,7 @@ import D3Group from './d3-group';
 const { observer } = Ember;
 
 export default D3Group.extend({
-  propertyChanged: observer('svg', 'xScale.scale', 'yScale.scale', 'data', 'width', 'height', 'barWidthTransform', function() {
+  propertyChanged: observer('d3Selection', 'xScale', 'yScale', 'data', 'barWidthTransform', function() {
     Ember.run.once(this, 'plot');
   }),
 
@@ -13,14 +13,14 @@ export default D3Group.extend({
     let xScale = this.get('xScale.scale');
     let yScale = this.get('yScale.scale');
     let data = this.get('data');
-    let width = this.get('width');
-    let height = this.get('height');
+    let range = this.get('yScale.range');
     let barWidthTransform = this.get('barWidthTransform');
 
-    if(!d3Selection || !xScale || !yScale || !data || !width || !height || !barWidthTransform) {
+    if(!d3Selection || !xScale || !yScale || !data || !range || !barWidthTransform) {
       return;
     }
 
+    let height = range[range.length - 1];
     let d3Data = d3Selection.selectAll("rect.bar").data(data)
 
     d3Data.enter().append("rect").attr("class", "bar");

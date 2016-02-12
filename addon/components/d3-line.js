@@ -9,16 +9,11 @@ export default D3Group.extend({
     this.set('line', d3.svg.line());
   },
 
-  didInsertElement() {
-    this._super.apply(this, arguments);
+  propertiesUpdated: observer('d3Selection', 'data', function() {
     Ember.run.once(this, 'plot');
-  },
+  }),
 
-  dataUpdated: on('init', observer('data', function() {
-    Ember.run.once(this, 'plot');
-  })),
-
-  xScaleUpdated: on('init', observer('xScale', 'xScale.scale', function() {
+  xScaleUpdated: on('init', observer('xScale', function() {
     let scale = this.get('xScale.scale');
 
     if(scale) {
@@ -27,7 +22,7 @@ export default D3Group.extend({
     }
   })),
 
-  yScaleUpdated: on('init', observer('yScale', 'yScale.scale', function() {
+  yScaleUpdated: on('init', observer('yScale', function() {
     let scale = this.get('yScale.scale');
 
     if(scale) {
@@ -38,7 +33,7 @@ export default D3Group.extend({
 
   plot() {
     let d3Selection = this.get('d3Selection');
-    let data = this.get('data');
+    let data = [this.get('data')];
     let xScale = this.get('xScale');
     let yScale = this.get('yScale');
 

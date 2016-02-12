@@ -9,9 +9,9 @@
   {{d3-axis class="x-axis" orientation="bottom" scale=xScale translateX=25 translateY=475}}
   {{d3-axis class="y-axis" orientation="left" scale=yScale translateX=25 translateY=25}}
   {{#d3-plot translateX=25 translateY=25}}
-    {{d3-line xScale=xScale yScale=yScale data=lineData}}
+    {{d3-line xScale=xScale yScale=yScale data=data}}
     {{#if showDots}}
-      {{d3-circles xScale=xScale yScale=yScale data=circleData}}
+      {{d3-circles xScale=xScale yScale=yScale data=data}}
     {{/if}}
   {{/d3-plot}}
 {{/d3-svg}}
