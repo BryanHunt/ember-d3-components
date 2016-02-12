@@ -4,7 +4,7 @@ import LinearScale from '../utils/scales/d3-linear-scale';
 const { Component, observer, on } = Ember;
 
 export default Component.extend({
-  showDots: false,
+  showDots: true,
 
   init() {
     this._super.apply(this, arguments);
