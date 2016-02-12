@@ -5,6 +5,8 @@ const { observer } = Ember;
 
 export default D3Group.extend({
   radius: 4.5,
+  dataX: "x",
+  dataY: "y",
 
   propertyChanged: observer('d3Selection', 'xScale', 'yScale', 'data', function() {
     Ember.run.once(this, 'plot');
@@ -15,7 +17,9 @@ export default D3Group.extend({
     let data = this.get('data');
     let xScale = this.get('xScale.scale');
     let yScale = this.get('yScale.scale');
-
+    let dataX = this.get('dataX');
+    let dataY = this.get('dataY');
+    
     if(!d3Selection || !data || !xScale || !yScale) {
       return;
     }
@@ -23,7 +27,7 @@ export default D3Group.extend({
     let d3Data = d3Selection.selectAll(`circle`).data(data);
 
     d3Data.enter().append("circle").attr("class", `circle`).attr("r", this.get('radius'));
-    d3Data.attr("cx", (dataPoint) => {return xScale(dataPoint.x);}).attr("cy", (dataPoint) => {return yScale(dataPoint.y);})
+    d3Data.attr("cx", (dataPoint) => {return xScale(dataPoint[dataX]);}).attr("cy", (dataPoint) => {return yScale(dataPoint[dataY]);})
     d3Data.exit().remove();
   }
 });

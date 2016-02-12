@@ -4,6 +4,9 @@ import D3Group from './d3-group';
 const { on, observer } = Ember;
 
 export default D3Group.extend({
+  dataX: "x",
+  dataY: "y",
+
   init() {
     this._super.apply(this, arguments);
     this.set('line', d3.svg.line());
@@ -15,18 +18,20 @@ export default D3Group.extend({
 
   xScaleUpdated: on('init', observer('xScale', function() {
     let scale = this.get('xScale.scale');
+    let dataX = this.get('dataX');
 
     if(scale) {
-      this.get('line').x((dataPoint) => {return scale(dataPoint.x);});
+      this.get('line').x((dataPoint) => {return scale(dataPoint[dataX]);});
       Ember.run.once(this, 'plot');
     }
   })),
 
   yScaleUpdated: on('init', observer('yScale', function() {
     let scale = this.get('yScale.scale');
+    let dataY = this.get('dataY');
 
     if(scale) {
-      this.get('line').y((dataPoint) => {return scale(dataPoint.y);});
+      this.get('line').y((dataPoint) => {return scale(dataPoint[dataY]);});
       Ember.run.once(this, 'plot');
     }
   })),
