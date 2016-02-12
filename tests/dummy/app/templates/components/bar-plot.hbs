@@ -1,4 +1,4 @@
-{{#d3-svg class="axis" width=500 height=500}}
+{{#d3-svg class="axis" width=550 height=500}}
   <defs>
     {{#d3-clip-path}}
       <rect x=-5 y=0 width=455 height=440></rect>
@@ -8,6 +8,45 @@
   {{d3-axis class="y-axis" orientation="left" scale=yScale translateX=25 translateY=25}}
   {{#d3-plot translateX=25 translateY=25}}
     {{d3-bar xScale=xScale yScale=yScale barWidthTransform=barWidthTransform data=data}}
+  {{/d3-plot}}
+{{/d3-svg}}
+
+{{#d3-svg class="axis" width=550 height=500}}
+  <defs>
+    {{#d3-clip-path}}
+      <rect x=-5 y=0 width=455 height=440></rect>
+    {{/d3-clip-path}}
+  </defs>
+  {{d3-axis class="x-axis" orientation="top" scale=xScale translateX=25 translateY=25}}
+  {{d3-axis class="y-axis" orientation="left" scale=yScaleDown translateX=25 translateY=25}}
+  {{#d3-plot translateX=25 translateY=25}}
+    {{d3-bar orientation="top" xScale=xScale yScale=yScaleDown barWidthTransform=barWidthTransform data=data}}
+  {{/d3-plot}}
+{{/d3-svg}}
+
+{{#d3-svg class="axis" width=550 height=500}}
+  <defs>
+    {{#d3-clip-path}}
+      <rect x=-5 y=0 width=455 height=440></rect>
+    {{/d3-clip-path}}
+  </defs>
+  {{d3-axis class="x-axis" orientation="left" scale=xScale translateX=50 translateY=25}}
+  {{d3-axis class="y-axis" orientation="bottom" scale=yScaleDown translateX=50 translateY=475}}
+  {{#d3-plot translateX=50 translateY=25}}
+    {{d3-bar orientation="left" xScale=yScaleDown yScale=xScale barWidthTransform=barWidthTransform data=data}}
+  {{/d3-plot}}
+{{/d3-svg}}
+
+{{#d3-svg class="axis" width=550 height=500}}
+  <defs>
+    {{#d3-clip-path}}
+      <rect x=-5 y=0 width=455 height=440></rect>
+    {{/d3-clip-path}}
+  </defs>
+  {{d3-axis class="x-axis" orientation="right" scale=xScale translateX=475 translateY=25}}
+  {{d3-axis class="y-axis" orientation="bottom" scale=yScale translateX=25 translateY=475}}
+  {{#d3-plot translateX=25 translateY=25}}
+    {{d3-bar orientation="right" xScale=yScale yScale=xScale barWidthTransform=barWidthTransform data=data}}
   {{/d3-plot}}
 {{/d3-svg}}
 

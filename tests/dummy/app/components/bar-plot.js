@@ -15,11 +15,12 @@ export default Component.extend({
     this._super.apply(this, arguments);
     this.set('xScale', OrdinalScale.create({domain: ["Apples", "Oranges", "Bananas"], rangeBands: [0, 450], padding: 0.2}));
     this.set('yScale', LinearScale.create({domain: [100, 0], range: [0, 450]}));
+    this.set('yScaleDown', LinearScale.create({domain: [0, 100], range: [0, 450]}));
 
     this.set('xGrid', Ember.Object.create({x1: 0, y1: 0, x2: 0, y2: -450}));
     this.set('yGrid', Ember.Object.create({x1: 0, y1: 0, x2: 450, y2: 0}));
     this.set('data', [{x: "Apples", y: 10}, {x: "Oranges", y: 20}, {x: "Bananas", y:35}]);
-    this.set('barWidthTransform', function(dataPoint, xScale) {return xScale.rangeBand();});
+    this.set('barWidthTransform', function(dataPoint, scale) {return scale.rangeBand();});
   },
 
   yMaxChanged: observer('yMax', function() {
