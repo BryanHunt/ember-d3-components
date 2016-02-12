@@ -5,6 +5,8 @@ const { observer } = Ember;
 
 export default D3Group.extend({
   orientation: "bottom",
+  groupName: "group",
+  valueName: "value",
 
   propertyChanged: observer('d3Selection', 'xScale', 'yScale', 'data', 'barWidthTransform', function() {
     Ember.run.once(this, 'plot');
@@ -15,6 +17,8 @@ export default D3Group.extend({
     let orientation = this.get('orientation');
     var xScale = this.get('xScale.scale');
     var yScale = this.get('yScale.scale');
+    var groupName = this.get('groupName');
+    var valueName = this.get('valueName');
 
     let data = this.get('data');
     let barWidthTransform = this.get('barWidthTransform');
@@ -25,27 +29,27 @@ export default D3Group.extend({
 
     if(orientation === "bottom" || orientation === "top") {
       var range = this.get('yScale.range');
-      var x = (dataPoint) => {return xScale(dataPoint.x);};
+      var x = (dataPoint) => {return xScale(dataPoint[groupName]);};
       var width = (dataPoint) => {return barWidthTransform(dataPoint, xScale);};
 
       if(orientation === "bottom") {
-        var y = (dataPoint) => {return yScale(dataPoint.y);};
-        var height = (dataPoint) => {return range[range.length - 1] - yScale(dataPoint.y);};
+        var y = (dataPoint) => {return yScale(dataPoint[valueName]);};
+        var height = (dataPoint) => {return range[range.length - 1] - yScale(dataPoint[valueName]);};
       } else {
         var y = (dataPoint) => {return 0;};
-        var height = (dataPoint) => {return yScale(dataPoint.y);};
+        var height = (dataPoint) => {return yScale(dataPoint[valueName]);};
       }
     } else {
       var range = this.get('xScale.range');
-      var y = (dataPoint) => {return yScale(dataPoint.x);};
+      var y = (dataPoint) => {return yScale(dataPoint[groupName]);};
       var height = (dataPoint) => {return barWidthTransform(dataPoint, yScale);};
 
       if(orientation === "left") {
         var x = (dataPoint) => {return 0;};
-        var width = (dataPoint) => {return xScale(dataPoint.y);};
+        var width = (dataPoint) => {return xScale(dataPoint[valueName]);};
       } else {
-        var x = (dataPoint) => {return xScale(dataPoint.y);};
-        var width = (dataPoint) => {return range[range.length - 1] - xScale(dataPoint.y);};
+        var x = (dataPoint) => {return xScale(dataPoint[valueName]);};
+        var width = (dataPoint) => {return range[range.length - 1] - xScale(dataPoint[valueName]);};
       }
     }
 
