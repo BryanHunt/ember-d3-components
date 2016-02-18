@@ -1,7 +1,5 @@
 {
   "predef": [
-    "d3",
-    "server",
     "document",
     "window",
     "-Promise"
