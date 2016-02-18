@@ -1,7 +1,7 @@
 import Ember from 'ember';
 import LinearScale from '../utils/scales/d3-linear-scale';
 
-const { Component, observer, on } = Ember;
+const { Component, observer } = Ember;
 
 export default Component.extend({
   showDots: true,
