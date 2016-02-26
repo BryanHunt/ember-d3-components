@@ -171,6 +171,7 @@ button {
 }
 
 .grid path {
+  fill: none;
   stroke-width: 0;
 }
 

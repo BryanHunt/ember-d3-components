@@ -8,7 +8,7 @@ const Router = Ember.Router.extend({
 Router.map(function() {
   this.route("xyplot");
   this.route("barplot");
-  this.route("compositeplot");
+  this.route("areaplot");
 });
 
 export default Router;
