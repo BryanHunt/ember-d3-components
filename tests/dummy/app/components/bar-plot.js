@@ -25,5 +25,6 @@ export default Component.extend({
 
   yMaxChanged: observer('yMax', function() {
     this.set('yScale.domain', [this.get('yMax'), 0]);
+    this.set('yScaleDown.domain', [0, this.get('yMax')])
   })
 });
