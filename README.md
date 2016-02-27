@@ -9,6 +9,16 @@ There is a demo app in [tests/dummy](https://github.com/BryanHunt/ember-d3-compo
 This project is very much in the experimental phase and the API is in flux.  
 Use with caution.
 
+Things that seem to be working:
+* Scales
+* Axis
+* Grid
+* Labels
+* XY Plots
+* Bar Plots
+* Area Plots
+* Bubble Plots
+
 This is a fairly significant undertaking and I would welcome additional contributors.
 
 This README outlines the details of collaborating on this Ember addon.
