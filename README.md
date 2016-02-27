@@ -18,6 +18,7 @@ Things that seem to be working:
 * Bar Plots
 * Area Plots
 * Bubble Plots
+* Pie Plots
 
 This is a fairly significant undertaking and I would welcome additional contributors.
 
