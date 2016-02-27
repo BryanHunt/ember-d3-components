@@ -1,6 +1,6 @@
 {
   "name": "ember-d3-components",
-  "version": "0.0.15",
+  "version": "0.0.16",
   "description": "EmberJS components for creating d3 charts",
   "directories": {
     "test": "tests"
