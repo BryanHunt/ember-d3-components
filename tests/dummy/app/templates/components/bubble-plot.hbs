@@ -9,7 +9,7 @@
   {{d3-axis class="axis" orientation="bottom" scale=xScale translateX=35 translateY=475}}
   {{d3-axis class="axis" orientation="left" scale=yScale translateX=35 translateY=25}}
   {{#d3-plot translateX=35 translateY=25}}
-    {{d3-circles xScale=xScale yScale=yScale rScale=rScale fill=fill stroke=stroke data=data}}
+    {{d3-circle xScale=xScale yScale=yScale rScale=rScale fill=fill stroke=stroke data=data}}
     {{d3-text value="X Axis" x=225 y=490}}
     {{d3-text value="Y Axis" x=-225 y=-25 transform="rotate(-90)"}}
   {{/d3-plot}}
