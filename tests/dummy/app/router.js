@@ -10,6 +10,7 @@ Router.map(function() {
   this.route("barplot");
   this.route("areaplot");
   this.route("bubbleplot");
+  this.route("pieplot");
 });
 
 export default Router;

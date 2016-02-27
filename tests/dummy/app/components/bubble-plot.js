@@ -7,8 +7,8 @@ export default Component.extend({
   showDots: true,
 
   init() {
-    let colors = d3.scale.category10();
     this._super.apply(this, arguments);
+    let colors = d3.scale.category10();
     this.set('xMax', 100);
     this.set('yMax', 100);
     this.set('data', [{x: 0, y: 10, r: 5}, {x: 10, y: 20, r: 7}, {x: 20, y: 65, r: 2}, {x: 30, y: 35, r: 0}, {x: 50, y: 25, r: 5}, {x: 70, y: 55, r: 6}, {x: 80, y: 17, r: 9}, {x: 90, y: 40, r: 4}]);

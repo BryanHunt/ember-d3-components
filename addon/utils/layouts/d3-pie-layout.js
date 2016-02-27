@@ -2,7 +2,7 @@ import Ember from 'ember';
 
 const { on, observer } = Ember;
 
-export default Ember.object.extend({
+export default Ember.Object.extend({
   init() {
     this.set('layout', d3.layout.pie());
   },

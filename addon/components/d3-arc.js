@@ -9,7 +9,7 @@ export default D3Group.extend({
     this.set('arc', d3.svg.arc());
   },
 
-  propertyChanged: observer('d3Selection', 'fill', 'layout', 'layout.layout','data', function() {
+  propertyChanged: observer('d3Selection', 'fill', 'layout', 'd3layout.layout','data', function() {
     Ember.run.once(this, 'plot');
   }),
 
@@ -35,7 +35,7 @@ export default D3Group.extend({
     let d3Selection = this.get('d3Selection');
     let arc = this.get('arc');
     let data = this.get('data');
-    let layout = this.get('layout.layout');
+    let layout = this.get('d3layout.layout');
     let fill = this.get('fill');
 
     if(!d3Selection || !data || !layout) {
