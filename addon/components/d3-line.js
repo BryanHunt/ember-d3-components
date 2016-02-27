@@ -38,7 +38,7 @@ export default D3Group.extend({
 
   plot() {
     let d3Selection = this.get('d3Selection');
-    let data = [this.get('data')];
+    let data = this.get('data');
     let xScale = this.get('xScale');
     let yScale = this.get('yScale');
 
@@ -46,6 +46,10 @@ export default D3Group.extend({
       return;
     }
 
+    if(!(data[0] instanceof Array)) {
+      data = [data];
+    }
+    
     let line = this.get('line');
     let d3data = d3Selection.selectAll("path.line").data(data);
 

@@ -10,6 +10,7 @@
   {{d3-axis class="axis" orientation="left" scale=y1Scale translateX=35 translateY=25}}
   {{#d3-plot translateX=35 translateY=25}}
     {{d3-area xScale=xScale y0Scale=y0Scale y1Scale=y1Scale data=data}}
+    {{d3-line xScale=xScale yScale=y1Scale data=data}}
     {{d3-text value="X Axis" x=225 y=490}}
     {{d3-text value="Y Axis" x=-225 y=-25 transform="rotate(-90)"}}
   {{/d3-plot}}

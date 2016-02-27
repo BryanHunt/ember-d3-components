@@ -49,13 +49,17 @@ export default D3Group.extend({
 
   plot() {
     let d3Selection = this.get('d3Selection');
-    let data = [this.get('data')];
+    let data = this.get('data');
     let xScale = this.get('xScale');
     let y0Scale = this.get('y0Scale');
     let y1Scale = this.get('y1Scale');
 
     if(!d3Selection || !data || !xScale || !y0Scale || !y1Scale) {
       return;
+    }
+
+    if(!(data[0] instanceof Array)) {
+      data = [data];
     }
 
     let area = this.get('area');
