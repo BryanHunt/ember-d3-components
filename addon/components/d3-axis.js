@@ -94,6 +94,15 @@ export default D3Component.extend(Translatable, {
     }
   })),
 
+  tickSubdivideChanged: on('init', observer('tickSubdivide', function() {
+    let tickSubdivide = this.get('tickSubdivide');
+
+    if(tickSubdivide !== undefined) {
+      this.get('axis').tickSubdivide(tickSubdivide);
+      Ember.run.once(this, this.updateAxis);
+    }
+  })),
+
   translation: computed('translateX', 'translateY', function() {
     let translateX = this.get('translateX');
     let translateY = this.get('translateY');
