@@ -9,6 +9,7 @@ Router.map(function() {
   this.route("xyplot");
   this.route("barplot");
   this.route("areaplot");
+  this.route("bubbleplot");
 });
 
 export default Router;

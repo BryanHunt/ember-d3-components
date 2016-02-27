@@ -1,0 +1,23 @@
+{{#d3-svg class="axis" width=550 height=550}}
+  <defs>
+    {{#d3-clip-path}}
+      <rect x=0 y=0 width=455 height=440></rect>
+    {{/d3-clip-path}}
+  </defs>
+  {{d3-grid class="grid" orientation="bottom" scale=xScale width=450 height=450 translateX=35 translateY=475}}
+  {{d3-grid class="grid" orientation="left" scale=yScale width=450 height=450 translateX=35 translateY=25}}
+  {{d3-axis class="x-axis" orientation="bottom" scale=xScale translateX=35 translateY=475}}
+  {{d3-axis class="y-axis" orientation="left" scale=yScale translateX=35 translateY=25}}
+  {{#d3-plot translateX=35 translateY=25}}
+    {{d3-circles xScale=xScale yScale=yScale rScale=rScale fill=fill stroke=stroke data=data}}
+    {{d3-text value="X Axis" x=225 y=490}}
+    {{d3-text value="Y Axis" x=-225 y=-25 transform="rotate(-90)"}}
+  {{/d3-plot}}
+{{/d3-svg}}
+
+<br>
+X Max {{input value=xMax}}
+<br>
+Y Max {{input value=yMax}}
+<br>
+{{input type="checkbox" checked=showDots}}Show Dots
