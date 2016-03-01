@@ -1,10 +1,9 @@
 import Ember from 'ember';
 import D3Component from './d3-component';
-import Translatable from '../mixins/translatable';
 
 const { on, observer, computed } = Ember;
 
-export default D3Component.extend(Translatable, {
+export default D3Component.extend({
   tagName: 'g',
   attributeBindings: ['transform'],
 
@@ -102,17 +101,6 @@ export default D3Component.extend(Translatable, {
       Ember.run.once(this, this.updateAxis);
     }
   })),
-
-  translation: computed('translateX', 'translateY', function() {
-    let translateX = this.get('translateX');
-    let translateY = this.get('translateY');
-
-    if(translateX !== undefined && translateY !== undefined) {
-      return `translate(${translateX}, ${translateY})`;
-    }
-  }),
-
-  transform: computed.alias('translation'),
 
   updateAxis() {
     this.get('d3Selection').transition().call(this.get('axis'));

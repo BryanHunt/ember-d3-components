@@ -4,7 +4,7 @@
       <rect x=0 y=0 width=455 height=440></rect>
     {{/d3-clip-path}}
   </defs>
-  {{#d3-plot translateX=250 translateY=250}}
+  {{#d3-plot transform="translate(250,250)"}}
     {{d3-arc innerRadius=0 outerRadius=100 d3layout=d3layout fill=fill data=data}}
   {{/d3-plot}}
 {{/d3-svg}}

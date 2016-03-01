@@ -4,9 +4,9 @@
       <rect x=-5 y=0 width=455 height=440></rect>
     {{/d3-clip-path}}
   </defs>
-  {{d3-axis class="axis" orientation="bottom" scale=xScale translateX=25 translateY=475}}
-  {{d3-axis class="axis" orientation="left" scale=yScale translateX=25 translateY=25}}
-  {{#d3-plot translateX=25 translateY=25}}
+  {{d3-axis class="axis" orientation="bottom" scale=xScale transform="translate(25,475)"}}
+  {{d3-axis class="axis" orientation="left" scale=yScale transform="translate(25,25)"}}
+  {{#d3-plot transform="translate(25,25)"}}
     {{d3-bar xScale=xScale yScale=yScale barWidthTransform=barWidthTransform data=data}}
   {{/d3-plot}}
 {{/d3-svg}}
@@ -17,9 +17,9 @@
       <rect x=-5 y=0 width=455 height=440></rect>
     {{/d3-clip-path}}
   </defs>
-  {{d3-axis class="axis" orientation="top" scale=xScale translateX=25 translateY=25}}
-  {{d3-axis class="axis" orientation="left" scale=yScaleDown translateX=25 translateY=25}}
-  {{#d3-plot translateX=25 translateY=25}}
+  {{d3-axis class="axis" orientation="top" scale=xScale transform="translate(25,25)"}}
+  {{d3-axis class="axis" orientation="left" scale=yScaleDown transform="translate(25,25)"}}
+  {{#d3-plot transform="translate(25,25)"}}
     {{d3-bar orientation="top" xScale=xScale yScale=yScaleDown barWidthTransform=barWidthTransform data=data}}
   {{/d3-plot}}
 {{/d3-svg}}
@@ -30,9 +30,9 @@
       <rect x=-5 y=0 width=455 height=440></rect>
     {{/d3-clip-path}}
   </defs>
-  {{d3-axis class="axis" orientation="left" scale=xScale translateX=50 translateY=25}}
-  {{d3-axis class="axis" orientation="bottom" scale=yScaleDown translateX=50 translateY=475}}
-  {{#d3-plot translateX=50 translateY=25}}
+  {{d3-axis class="axis" orientation="left" scale=xScale transform="translate(50,25)"}}
+  {{d3-axis class="axis" orientation="bottom" scale=yScaleDown transform="translate(50,475)"}}
+  {{#d3-plot transform="translate(50,25)"}}
     {{d3-bar orientation="left" xScale=yScaleDown yScale=xScale barWidthTransform=barWidthTransform data=data}}
   {{/d3-plot}}
 {{/d3-svg}}
@@ -43,9 +43,9 @@
       <rect x=-5 y=0 width=455 height=440></rect>
     {{/d3-clip-path}}
   </defs>
-  {{d3-axis class="axis" orientation="right" scale=xScale translateX=475 translateY=25}}
-  {{d3-axis class="axis" orientation="bottom" scale=yScale translateX=25 translateY=475}}
-  {{#d3-plot translateX=25 translateY=25}}
+  {{d3-axis class="axis" orientation="right" scale=xScale transform="translate(475,25)"}}
+  {{d3-axis class="axis" orientation="bottom" scale=yScale transform="translate(25,475)"}}
+  {{#d3-plot transform="translate(25,25)"}}
     {{d3-bar orientation="right" xScale=yScale yScale=xScale barWidthTransform=barWidthTransform data=data}}
   {{/d3-plot}}
 {{/d3-svg}}
