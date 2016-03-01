@@ -1,15 +1,15 @@
 import Ember from 'ember';
 import D3Group from './d3-group';
+import Accessor from '../utils/accessor';
 
 const { on, observer } = Ember;
 
 export default D3Group.extend({
-  dataX: "x",
-  dataY: "y",
-
   init() {
     this._super(...arguments);
     this.set('line', d3.svg.line());
+    this.set('xAccessor', Accessor.create({name: "x"}));
+    this.set('yAccessor', Accessor.create({name: "y"}));
   },
 
   propertiesUpdated: observer('d3Selection', 'data', function() {
@@ -18,20 +18,20 @@ export default D3Group.extend({
 
   xScaleUpdated: on('init', observer('xScale', 'xScale.scale', function() {
     let scale = this.get('xScale.scale');
-    let dataX = this.get('dataX');
+    let accessor = this.get('xAccessor');
 
     if(scale) {
-      this.get('line').x((dataPoint) => {return scale(dataPoint[dataX]);});
+      this.get('line').x((dataPoint) => {return scale(accessor.extract(dataPoint));});
       Ember.run.once(this, 'plot');
     }
   })),
 
   yScaleUpdated: on('init', observer('yScale', 'yScale.scale', function() {
     let scale = this.get('yScale.scale');
-    let dataY = this.get('dataY');
+    let accessor = this.get('yAccessor');
 
     if(scale) {
-      this.get('line').y((dataPoint) => {return scale(dataPoint[dataY]);});
+      this.get('line').y((dataPoint) => {return scale(accessor.extract(dataPoint));});
       Ember.run.once(this, 'plot');
     }
   })),

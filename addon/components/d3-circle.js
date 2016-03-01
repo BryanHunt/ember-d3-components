@@ -1,13 +1,18 @@
 import Ember from 'ember';
 import D3Group from './d3-group';
+import Accessor from '../utils/accessor';
 
 const { observer } = Ember;
 
 export default D3Group.extend({
   radius: 4.5,
-  dataX: "x",
-  dataY: "y",
-  dataR: "r",
+
+  init() {
+    this._super(...arguments);
+    this.set('xAccessor', Accessor.create({name: "x"}));
+    this.set('yAccessor', Accessor.create({name: "y"}));
+    this.set('rAccessor', Accessor.create({name: "r"}));
+  },
 
   propertyChanged: observer('d3Selection', 'xScale', 'xScale.scale', 'yScale', 'yScale.scale', 'rScale', 'rScale.scale','data', function() {
     Ember.run.once(this, 'plot');
@@ -19,11 +24,11 @@ export default D3Group.extend({
     let xScale = this.get('xScale.scale');
     let yScale = this.get('yScale.scale');
     let rScale = this.get('rScale.scale');
-    let dataX = this.get('dataX');
-    let dataY = this.get('dataY');
-    let dataR = this.get('dataR');
     let fill = this.get('fill');
     let stroke = this.get('stroke');
+    let xAccessor = this.get('xAccessor');
+    let yAccessor = this.get('yAccessor');
+    let rAccessor = this.get('rAccessor');
 
     if(!d3Selection || !data || !xScale || !yScale) {
       return;
@@ -42,11 +47,11 @@ export default D3Group.extend({
     }
 
     d3Data.transition()
-      .attr("cx", (dataPoint) => {return xScale(dataPoint[dataX]);})
-      .attr("cy", (dataPoint) => {return yScale(dataPoint[dataY]);});
+      .attr("cx", (dataPoint) => {return xScale(xAccessor.extract(dataPoint));})
+      .attr("cy", (dataPoint) => {return yScale(yAccessor.extract(dataPoint));});
 
     if(rScale) {
-      d3Data.attr("r", (dataPoint) => {return rScale(dataPoint[dataR])});
+      d3Data.attr("r", (dataPoint) => {return rScale(rAccessor.extract(dataPoint))});
     } else {
       d3Data.attr("r", this.get('radius'));
     }
