@@ -9,7 +9,7 @@ export default D3Group.extend({
   dataY1: "y",
 
   init() {
-    this._super.apply(this, arguments);
+    this._super(...arguments);
     this.set('area', d3.svg.area());
   },
 

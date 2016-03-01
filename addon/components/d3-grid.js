@@ -5,7 +5,7 @@ const { on, observer } = Ember;
 
 export default Axis.extend({
   init() {
-    this._super.apply(this, arguments);
+    this._super(...arguments);
     this.set('tickFormat', "");
   },
 

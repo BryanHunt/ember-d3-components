@@ -10,7 +10,7 @@ export default D3Component.extend(Translatable, {
 
   init() {
     this.set('axis', d3.svg.axis());
-    this._super.apply(this, arguments);
+    this._super(...arguments);
   },
 
   oritntationChanged: on('init', observer('orientation', function() {

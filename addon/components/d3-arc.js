@@ -5,7 +5,7 @@ const { observer, on } = Ember;
 
 export default D3Group.extend({
   init() {
-    this._super.apply(this, arguments);
+    this._super(...arguments);
     this.set('arc', d3.svg.arc());
   },
 

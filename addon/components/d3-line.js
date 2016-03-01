@@ -8,7 +8,7 @@ export default D3Group.extend({
   dataY: "y",
 
   init() {
-    this._super.apply(this, arguments);
+    this._super(...arguments);
     this.set('line', d3.svg.line());
   },
 
@@ -49,7 +49,7 @@ export default D3Group.extend({
     if(!(data[0] instanceof Array)) {
       data = [data];
     }
-    
+
     let line = this.get('line');
     let d3data = d3Selection.selectAll("path.line").data(data);
 
