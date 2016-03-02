@@ -4,8 +4,6 @@ This addon provides EmberJS components for visualizing data with d3.js.
 
 See it in action: http://bryanhunt.github.io/#/d3
 
-There is a demo app in [tests/dummy](https://github.com/BryanHunt/ember-d3-components/tree/master/tests/dummy).
-
 This project is very much in the experimental phase and the API is in flux.  
 Use with caution.
 
@@ -14,26 +12,21 @@ Things that seem to be working:
 * Axis
 * Grid
 * Labels
-* XY Plots
-* Bar Plots
-* Area Plots
-* Bubble Plots
-* Pie Plots
+* Pie Layout
+
+If you need to create charts, I would recommend checking out: https://github.com/BryanHunt/ember-d3-charts
 
 This is a fairly significant undertaking and I would welcome additional contributors.
 
-This README outlines the details of collaborating on this Ember addon.
-
 ## Installation
+
+* ember install ember-d3-components
+
+## Contributing
 
 * `git clone` this repository
 * `npm install`
 * `bower install`
-
-## Running
-
-* `ember server`
-* Visit your app at http://localhost:4200.
 
 ## Running Tests
 
