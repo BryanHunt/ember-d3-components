@@ -11,7 +11,12 @@ Things that seem to be working:
 * Scales
 * Axis
 * Grid
-* Labels
+* Text
+* Line
+* Arc
+* Area
+* Bar
+* Circle
 * Pie Layout
 
 If you need to create charts, I would recommend checking out: https://github.com/BryanHunt/ember-d3-charts
