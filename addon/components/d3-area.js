@@ -53,6 +53,7 @@ export default D3Group.extend({
     let xScale = this.get('xScale');
     let y0Scale = this.get('y0Scale');
     let y1Scale = this.get('y1Scale');
+    let transition = this.get('transition');
 
     if(!d3Selection || !data || !xScale || !y0Scale || !y1Scale) {
       return;
@@ -63,10 +64,14 @@ export default D3Group.extend({
     }
 
     let area = this.get('area');
-    let d3data = d3Selection.selectAll("path.area").data(data);
+    let d3Data = d3Selection.selectAll("path.area").data(data);
 
-    d3data.enter().append("path").attr("class", "area");
-    d3data.transition().attr("d", (dataPoint) => {return area(dataPoint);});
-    d3data.exit().remove();
+    d3Data.enter().append("path").attr("class", "area");
+
+    if(transition)
+      transition(this, d3Data);
+
+    d3Data.attr("d", (dataPoint) => {return area(dataPoint);});
+    d3Data.exit().remove();
   }
 });

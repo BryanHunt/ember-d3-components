@@ -24,6 +24,7 @@ export default D3Group.extend({
     var yScale = this.get('yScale.scale');
     let xAccessor = this.get('xAccessor');
     let yAccessor = this.get('yAccessor');
+    let transition = this.get('transition');
 
     let data = this.get('data');
     let barWidthTransform = this.get('barWidthTransform');
@@ -63,7 +64,11 @@ export default D3Group.extend({
     let d3Data = d3Selection.selectAll("rect.bar").data(data)
 
     d3Data.enter().append("rect").attr("class", "bar");
-    d3Data.transition().attr("x", x).attr("y", y).attr("height", height).attr("width", width);
+
+    if(transition)
+      transition(this, d3Data);
+
+    d3Data.attr("x", x).attr("y", y).attr("height", height).attr("width", width);
     d3Data.exit().remove();
   }
 });

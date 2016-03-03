@@ -103,6 +103,12 @@ export default D3Component.extend({
   })),
 
   updateAxis() {
-    this.get('d3Selection').transition().call(this.get('axis'));
+    let selection = this.get('d3Selection');
+    let transition = this.get('transition');
+
+    if(transition)
+      transition(this, selection);
+      
+    selection.call(this.get('axis'));
   }
 });

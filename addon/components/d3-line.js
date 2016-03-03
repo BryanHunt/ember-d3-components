@@ -41,6 +41,7 @@ export default D3Group.extend({
     let data = this.get('data');
     let xScale = this.get('xScale');
     let yScale = this.get('yScale');
+    let transition = this.get('transition');
 
     if(!d3Selection || !data || !xScale || !yScale) {
       return;
@@ -51,10 +52,14 @@ export default D3Group.extend({
     }
 
     let line = this.get('line');
-    let d3data = d3Selection.selectAll("path.line").data(data);
+    let d3Data = d3Selection.selectAll("path.line").data(data);
 
-    d3data.enter().append("path").attr("class", "line");
-    d3data.transition().attr("d", (dataPoint) => {return line(dataPoint);});
-    d3data.exit().remove();
+    d3Data.enter().append("path").attr("class", "line");
+
+    if(transition)
+      transition(this, d3Data);
+
+    d3Data.attr("d", (dataPoint) => {return line(dataPoint);});
+    d3Data.exit().remove();
   }
 });

@@ -9,7 +9,7 @@ export default D3Group.extend({
     this.set('arc', d3.svg.arc());
   },
 
-  propertyChanged: observer('d3Selection', 'fill', 'layout', 'd3layout.layout','data', function() {
+  propertyChanged: observer('d3Selection', 'fill', 'transition','data', function() {
     Ember.run.once(this, 'plot');
   }),
 
@@ -35,14 +35,14 @@ export default D3Group.extend({
     let d3Selection = this.get('d3Selection');
     let arc = this.get('arc');
     let data = this.get('data');
-    let layout = this.get('d3layout.layout');
+    let transition = this.get('transition');
     let fill = this.get('fill');
 
-    if(!d3Selection || !data || !layout) {
+    if(!d3Selection || !data) {
       return;
     }
 
-    let d3Data = d3Selection.selectAll(`path.arc`).data(layout(data));
+    let d3Data = d3Selection.selectAll(`path.arc`).data(data);
 
     d3Data.enter().append("path").attr("class", `arc`);
 
@@ -50,21 +50,8 @@ export default D3Group.extend({
       d3Data.style("fill", fill);
     }
 
-    let _this = this;
-    d3Data.transition().attrTween("d", function(dataPoint) {
-      let currentArc = _this.get('currentArc');
-
-      if(!currentArc) {
-        currentArc = {startAngle: 0, endAngle: 0};
-      }
-
-      let interpolate = d3.interpolate(currentArc, dataPoint);
-      _this.set('currentArc', interpolate(1));
-
-      return function(t) {
-        return arc(interpolate(t));
-      }
-    });
+    if(transition)
+      transition(this, d3Data, arc);
 
     d3Data.exit().remove();
   }
