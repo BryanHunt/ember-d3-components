@@ -21,6 +21,8 @@ Things that seem to be working:
 
 If you need to create charts, I would recommend checking out: https://github.com/BryanHunt/ember-d3-charts
 
+If you have questions, you can generally find me on Slack in the EmberJS Community.
+
 This is a fairly significant undertaking and I would welcome additional contributors.
 
 ## Installation
