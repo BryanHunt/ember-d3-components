@@ -39,7 +39,7 @@ export default D3Group.extend({
 
   y1ScaleUpdated: on('init', observer('y1Scale', 'y1Scale.scale', function() {
     let scale = this.get('y1Scale.scale');
-    let accessor = this.get('y0Accessor');
+    let accessor = this.get('yAccessor');
 
     if(scale) {
       this.get('area').y1((dataPoint) => {return scale(accessor.extract(dataPoint));});
@@ -53,6 +53,7 @@ export default D3Group.extend({
     let xScale = this.get('xScale');
     let y0Scale = this.get('y0Scale');
     let y1Scale = this.get('y1Scale');
+    let fill = this.get('fill');
     let transition = this.get('transition');
 
     if(!d3Selection || !data || !xScale || !y0Scale || !y1Scale) {
@@ -70,6 +71,10 @@ export default D3Group.extend({
 
     if(transition)
       transition(this, d3Data);
+
+    if(fill) {
+      d3Data.style("fill", fill);
+    }
 
     d3Data.attr("d", (dataPoint) => {return area(dataPoint);});
     d3Data.exit().remove();

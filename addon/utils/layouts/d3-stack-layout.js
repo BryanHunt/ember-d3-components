@@ -8,7 +8,7 @@ export default Ember.Object.extend({
   },
 
   valuesChanged: on('init', observer('values', function() {
-    let value = this.get('values');
+    let values = this.get('values');
 
     if(values) {
       this.get('layout').values(values);
@@ -16,11 +16,11 @@ export default Ember.Object.extend({
     }
   })),
 
-  offsetChanged: on('init', observer('offsetChanged', function() {
-    let offsetChanged = this.get('offsetChanged');
+  offsetChanged: on('init', observer('offset', function() {
+    let offset = this.get('offset');
 
-    if(offsetChanged) {
-      this.get('layout').offsetChanged(offsetChanged);
+    if(offset) {
+      this.get('layout').offset(offset);
       Ember.run.once(this, 'notifyPropertyChange', 'layout');
     }
   })),
