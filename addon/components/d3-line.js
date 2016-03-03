@@ -41,6 +41,7 @@ export default D3Group.extend({
     let data = this.get('data');
     let xScale = this.get('xScale');
     let yScale = this.get('yScale');
+    let stroke = this.get('stroke');
     let transition = this.get('transition');
 
     if(!d3Selection || !data || !xScale || !yScale) {
@@ -55,6 +56,10 @@ export default D3Group.extend({
     let d3Data = d3Selection.selectAll("path.line").data(data);
 
     d3Data.enter().append("path").attr("class", "line");
+
+    if(stroke) {
+      d3Data.style("stroke", stroke);
+    }
 
     if(transition)
       transition(this, d3Data);
