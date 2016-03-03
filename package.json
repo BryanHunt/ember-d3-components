@@ -1,6 +1,6 @@
 {
   "name": "ember-d3-components",
-  "version": "0.0.20",
+  "version": "0.0.21",
   "description": "EmberJS components wrapped around d3 primitives",
   "directories": {
     "test": "tests"
