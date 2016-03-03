@@ -4,10 +4,7 @@ import Axis from './d3-axis';
 const { on, observer } = Ember;
 
 export default Axis.extend({
-  init() {
-    this._super(...arguments);
-    this.set('tickFormat', "");
-  },
+  tickFormat: "",
 
   parametersChanged: on('init', observer('width', 'height', 'orientation', function() {
     Ember.run.once(this, this.updateGrid);

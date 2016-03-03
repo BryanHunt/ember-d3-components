@@ -50,8 +50,13 @@ export default D3Group.extend({
       d3Data.style("fill", fill);
     }
 
-    if(transition)
+    if(transition) {
       transition(this, d3Data, arc);
+    } else {
+      d3Data.attr("d", function(dataPoint, i) {
+        return arc(dataPoint, i);
+      });
+    }
 
     d3Data.exit().remove();
   }

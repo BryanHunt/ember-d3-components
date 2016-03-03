@@ -9,9 +9,9 @@ export default D3Group.extend({
 
   init() {
     this._super(...arguments);
-    this.set('xAccessor', Accessor.create({name: "x"}));
-    this.set('yAccessor', Accessor.create({name: "y"}));
-    this.set('rAccessor', Accessor.create({name: "r"}));
+    this.xAccessor = this.xAccessor || Accessor.create({name: "x"});
+    this.yAccessor = this.yAccessor || Accessor.create({name: "y"});
+    this.rAccessor = this.rAccessor || Accessor.create({name: "r"});
   },
 
   propertyChanged: observer('d3Selection', 'xScale', 'xScale.scale', 'yScale', 'yScale.scale', 'rScale', 'rScale.scale','data', function() {

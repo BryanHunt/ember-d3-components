@@ -7,10 +7,10 @@ const { on, observer } = Ember;
 export default D3Group.extend({
   init() {
     this._super(...arguments);
-    this.set('area', d3.svg.area());
-    this.set('xAccessor', Accessor.create({name: "x"}));
-    this.set('yAccessor', Accessor.create({name: "y"}));
-    this.set('y0Accessor', Accessor.create({name: "y"}));
+    this.area = d3.svg.area();
+    this.xAccessor = this.xAccessor || Accessor.create({name: "x"});
+    this.yAccessor = this.yAccessor || Accessor.create({name: "y"});
+    this.y0Accessor = this.y0Accessor || Accessor.create({name: "y"});
   },
 
   propertiesUpdated: observer('d3Selection', 'data', function() {

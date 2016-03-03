@@ -7,9 +7,9 @@ const { on, observer } = Ember;
 export default D3Group.extend({
   init() {
     this._super(...arguments);
-    this.set('line', d3.svg.line());
-    this.set('xAccessor', Accessor.create({name: "x"}));
-    this.set('yAccessor', Accessor.create({name: "y"}));
+    this.line = d3.svg.line();
+    this.xAccessor = this.xAccessor || Accessor.create({name: "x"});
+    this.yAccessor = this.yAccessor || Accessor.create({name: "y"});
   },
 
   propertiesUpdated: observer('d3Selection', 'data', function() {

@@ -8,8 +8,8 @@ export default D3Component.extend({
   attributeBindings: ['transform'],
 
   init() {
-    this.set('axis', d3.svg.axis());
     this._super(...arguments);
+    this.axis = d3.svg.axis();
   },
 
   oritntationChanged: on('init', observer('orientation', function() {
@@ -108,7 +108,7 @@ export default D3Component.extend({
 
     if(transition)
       transition(this, selection);
-      
+
     selection.call(this.get('axis'));
   }
 });
