@@ -18,6 +18,7 @@ Things that seem to be working:
 * Bar
 * Circle
 * Pie Layout
+* Stack Layout
 
 If you need to create charts, I would recommend checking out: https://github.com/BryanHunt/ember-d3-charts
 
