@@ -14,7 +14,7 @@ export default D3Group.extend({
   },
 
   propertyChanged: observer('d3Selection', 'xScale', 'xScale.scale', 'yScale', 'yScale.scale', 'data', 'barWidthTransform', function() {
-    Ember.run.once(this, 'plot');
+    Ember.run.next(this, 'plot');
   }),
 
   plot() {

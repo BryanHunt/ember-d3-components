@@ -10,7 +10,7 @@ export default D3Group.extend({
   },
 
   propertyChanged: observer('d3Selection', 'fill', 'transition','data', function() {
-    Ember.run.once(this, 'plot');
+    Ember.run.next(this, 'plot');
   }),
 
   innerRadiusChanged: on('init', observer('innerRadius', function() {
@@ -18,7 +18,7 @@ export default D3Group.extend({
 
     if(innerRadius) {
       this.get('arc').innerRadius(innerRadius);
-      Ember.run.once(this, 'plot');
+      Ember.run.next(this, 'plot');
     }
   })),
 
@@ -27,7 +27,7 @@ export default D3Group.extend({
 
     if(outerRadius) {
       this.get('arc').outerRadius(outerRadius);
-      Ember.run.once(this, 'plot');
+      Ember.run.next(this, 'plot');
     }
   })),
 

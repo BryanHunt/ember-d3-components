@@ -17,7 +17,7 @@ export default D3Component.extend({
 
     if(orientation !== undefined) {
       this.get('axis').orient(orientation);
-      Ember.run.once(this, this.updateAxis);
+      Ember.run.next(this, this.updateAxis);
     }
   })),
 
@@ -26,7 +26,7 @@ export default D3Component.extend({
 
     if(scale !== undefined) {
       this.get('axis').scale(scale);
-      Ember.run.once(this, this.updateAxis);
+      Ember.run.next(this, this.updateAxis);
     }
   })),
 
@@ -35,7 +35,7 @@ export default D3Component.extend({
 
     if(ticks !== undefined) {
       this.get('axis').ticks(ticks);
-      Ember.run.once(this, this.updateAxis);
+      Ember.run.next(this, this.updateAxis);
     }
   })),
 
@@ -44,7 +44,7 @@ export default D3Component.extend({
 
     if(tickValues !== undefined) {
       this.get('axis').tickValues(tickValues);
-      Ember.run.once(this, this.updateAxis);
+      Ember.run.next(this, this.updateAxis);
     }
   })),
 
@@ -53,7 +53,7 @@ export default D3Component.extend({
 
     if(tickSize !== undefined) {
       this.get('axis').tickSize(tickSize);
-      Ember.run.once(this, this.updateAxis);
+      Ember.run.next(this, this.updateAxis);
     }
   })),
 
@@ -62,7 +62,7 @@ export default D3Component.extend({
 
     if(innerTickSize !== undefined) {
       this.get('axis').innerTickSize(innerTickSize);
-      Ember.run.once(this, this.updateAxis);
+      Ember.run.next(this, this.updateAxis);
     }
   })),
 
@@ -71,7 +71,7 @@ export default D3Component.extend({
 
     if(outerTickSize !== undefined) {
       this.get('axis').outerTickSize(outerTickSize);
-      Ember.run.once(this, this.updateAxis);
+      Ember.run.next(this, this.updateAxis);
     }
   })),
 
@@ -80,7 +80,7 @@ export default D3Component.extend({
 
     if(tickFormat !== undefined) {
       this.get('axis').tickFormat(tickFormat);
-      Ember.run.once(this, this.updateAxis);
+      Ember.run.next(this, this.updateAxis);
     }
   })),
 
@@ -89,7 +89,7 @@ export default D3Component.extend({
 
     if(tickPadding !== undefined) {
       this.get('axis').tickPadding(tickPadding);
-      Ember.run.once(this, this.updateAxis);
+      Ember.run.next(this, this.updateAxis);
     }
   })),
 
@@ -98,7 +98,7 @@ export default D3Component.extend({
 
     if(tickSubdivide !== undefined) {
       this.get('axis').tickSubdivide(tickSubdivide);
-      Ember.run.once(this, this.updateAxis);
+      Ember.run.next(this, this.updateAxis);
     }
   })),
 
