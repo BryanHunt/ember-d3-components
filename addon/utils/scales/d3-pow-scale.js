@@ -13,7 +13,7 @@ export default Scale.extend({
 
     if(rangeRound) {
       this.get('scale').rangeRound(rangeRound);
-      Ember.run.once(this, 'notifyPropertyChange', 'scale');
+      Ember.run.next(this, 'notifyPropertyChange', 'scale');
     }
   })),
 
@@ -22,7 +22,7 @@ export default Scale.extend({
 
     if(exponent) {
       this.get('scale').exponent(exponent);
-      Ember.run.once(this, 'notifyPropertyChange', 'scale');
+      Ember.run.next(this, 'notifyPropertyChange', 'scale');
     }
   })),
 
@@ -31,7 +31,7 @@ export default Scale.extend({
 
     if(interpolate) {
       this.get('scale').interpolate(interpolate);
-      Ember.run.once(this, 'notifyPropertyChange', 'scale');
+      Ember.run.next(this, 'notifyPropertyChange', 'scale');
     }
   })),
 
@@ -40,7 +40,7 @@ export default Scale.extend({
 
     if(clamp !== undefined && clamp !== null) {
       this.get('scale').clamp(clamp);
-      Ember.run.once(this, 'notifyPropertyChange', 'scale');
+      Ember.run.next(this, 'notifyPropertyChange', 'scale');
     }
   }))
 });

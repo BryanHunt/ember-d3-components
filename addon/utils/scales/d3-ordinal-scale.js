@@ -19,7 +19,7 @@ export default Scale.extend({
         this.get('scale').rangePoints(rangePoints);
       }
 
-      Ember.run.once(this, 'notifyPropertyChange', 'scale');
+      Ember.run.next(this, 'notifyPropertyChange', 'scale');
     }
   })),
 
@@ -34,7 +34,7 @@ export default Scale.extend({
         this.get('scale').rangeRoundPoints(rangeRoundPoints);
       }
 
-      Ember.run.once(this, 'notifyPropertyChange', 'scale');
+      Ember.run.next(this, 'notifyPropertyChange', 'scale');
     }
   })),
 
@@ -54,7 +54,7 @@ export default Scale.extend({
         this.get('scale').rangeBands(rangeBands);
       }
 
-      Ember.run.once(this, 'notifyPropertyChange', 'scale');
+      Ember.run.next(this, 'notifyPropertyChange', 'scale');
     }
   })),
 

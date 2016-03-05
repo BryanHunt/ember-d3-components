@@ -8,7 +8,7 @@ export default Ember.Object.extend({
 
     if(domain) {
       this.get('scale').domain(domain);
-      Ember.run.once(this, 'notifyPropertyChange', 'scale');
+      Ember.run.next(this, 'notifyPropertyChange', 'scale');
     }
   })),
 
@@ -17,7 +17,7 @@ export default Ember.Object.extend({
 
     if(range) {
       this.get('scale').range(range);
-      Ember.run.once(this, 'notifyPropertyChange', 'scale');
+      Ember.run.next(this, 'notifyPropertyChange', 'scale');
     }
   })),
 });

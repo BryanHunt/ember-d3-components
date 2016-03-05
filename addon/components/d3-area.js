@@ -1,6 +1,6 @@
 import Ember from 'ember';
 import D3Group from './d3-group';
-import Accessor from '../utils/accessor';
+import Accessor from '../utils/d3-data-accessor';
 
 const { on, observer } = Ember;
 

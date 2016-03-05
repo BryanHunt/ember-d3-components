@@ -12,7 +12,7 @@ export default Ember.Object.extend({
 
     if(value) {
       this.get('layout').value(value);
-      Ember.run.once(this, 'notifyPropertyChange', 'layout');
+      Ember.run.next(this, 'notifyPropertyChange', 'layout');
     }
   })),
 
@@ -21,7 +21,7 @@ export default Ember.Object.extend({
 
     if(sort) {
       this.get('layout').sort(sort);
-      Ember.run.once(this, 'notifyPropertyChange', 'layout');
+      Ember.run.next(this, 'notifyPropertyChange', 'layout');
     }
   })),
 
@@ -30,7 +30,7 @@ export default Ember.Object.extend({
 
     if(startAngle) {
       this.get('layout').startAngle(startAngle);
-      Ember.run.once(this, 'notifyPropertyChange', 'layout');
+      Ember.run.next(this, 'notifyPropertyChange', 'layout');
     }
   })),
 
@@ -39,7 +39,7 @@ export default Ember.Object.extend({
 
     if(endAngle) {
       this.get('layout').endAngle(endAngle);
-      Ember.run.once(this, 'notifyPropertyChange', 'layout');
+      Ember.run.next(this, 'notifyPropertyChange', 'layout');
     }
   })),
 
@@ -48,7 +48,7 @@ export default Ember.Object.extend({
 
     if(padAngle) {
       this.get('layout').padAngle(padAngle);
-      Ember.run.once(this, 'notifyPropertyChange', 'layout');
+      Ember.run.next(this, 'notifyPropertyChange', 'layout');
     }
   })),
 });
