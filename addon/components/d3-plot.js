@@ -7,6 +7,6 @@ export default D3Group.extend({
   attributeBindings: ['transform', 'clip-path'],
 
   'clip-path': computed('parentView.clipPath', function() {
-    return `url(${window.location.href}${this.get('parentView.clipPath')})`;
+    return `url(${window.location.href.replace(window.location.hash, "")}${this.get('parentView.clipPath')})`;
   })
 });
