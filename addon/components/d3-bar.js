@@ -11,9 +11,10 @@ export default D3Group.extend({
     this._super(...arguments);
     this.xAccessor = this.xAccessor || Accessor.create({name: "x"});
     this.yAccessor = this.yAccessor || Accessor.create({name: "y"});
+    this.y0Accessor = this.y0Accessor || Accessor.create({name: "y"});
   },
 
-  propertyChanged: observer('d3Selection', 'xScale', 'xScale.scale', 'yScale', 'yScale.scale', 'data', 'barWidthTransform', function() {
+  propertyChanged: observer('d3Selection', 'orientation', 'xScale', 'xScale.scale', 'yScale', 'yScale.scale', 'y0Scale', 'y0Scale.scale', 'data', 'barWidthTransform', function() {
     Ember.run.next(this, 'plot');
   }),
 
@@ -22,14 +23,17 @@ export default D3Group.extend({
     let orientation = this.get('orientation');
     var xScale = this.get('xScale.scale');
     var yScale = this.get('yScale.scale');
+    var y0Scale = this.get('y0Scale.scale');
     let xAccessor = this.get('xAccessor');
     let yAccessor = this.get('yAccessor');
+    let y0Accessor = this.get('y0Accessor');
     let transition = this.get('transition');
+    let fill = this.get('fill');
 
     let data = this.get('data');
     let barWidthTransform = this.get('barWidthTransform');
 
-    if(!d3Selection || !xScale || !yScale || !data || !barWidthTransform) {
+    if(!d3Selection || !xScale || !yScale || !y0Scale || !data || !barWidthTransform) {
       return;
     }
 
@@ -42,22 +46,22 @@ export default D3Group.extend({
 
       if(orientation === "bottom") {
         y = (dataPoint) => {return yScale(yAccessor.extract(dataPoint));};
-        height = (dataPoint) => {return range[range.length - 1] - yScale(yAccessor.extract(dataPoint));};
+        height = (dataPoint) => {return y0Scale(y0Accessor.extract(dataPoint)) - yScale(yAccessor.extract(dataPoint))};
       } else {
-        y = () => {return 0;};
+        y = (dataPoint) => {return y0Scale(y0Accessor.extract(dataPoint));};
         height = (dataPoint) => {return yScale(yAccessor.extract(dataPoint));};
       }
     } else {
       let range = this.get('xScale.range');
-      y = (dataPoint) => {return yScale(xAccessor.extract(dataPoint));};
-      height = (dataPoint) => {return barWidthTransform(dataPoint, yScale);};
+      y = (dataPoint) => {return xScale(xAccessor.extract(dataPoint));};
+      height = (dataPoint) => {return barWidthTransform(dataPoint, xScale);};
 
       if(orientation === "left") {
-        x = () => {return 0;};
-        width = (dataPoint) => {return xScale(yAccessor.extract(dataPoint));};
+        x = (dataPoint) => {return y0Scale(y0Accessor.extract(dataPoint));};
+        width = (dataPoint) => {return yScale(yAccessor.extract(dataPoint));};
       } else {
-        x = (dataPoint) => {return xScale(yAccessor.extract(dataPoint));};
-        width = (dataPoint) => {return range[range.length - 1] - xScale(yAccessor.extract(dataPoint));};
+        x = (dataPoint) => {return yScale(yAccessor.extract(dataPoint));};
+        width = (dataPoint) => {return y0Scale(y0Accessor.extract(dataPoint)) - yScale(yAccessor.extract(dataPoint));};
       }
     }
 
@@ -69,6 +73,11 @@ export default D3Group.extend({
       transition(this, d3Data);
 
     d3Data.attr("x", x).attr("y", y).attr("height", height).attr("width", width);
+
+    if(fill) {
+      d3Data.style("fill", fill);
+    }
+
     d3Data.exit().remove();
   }
 });
