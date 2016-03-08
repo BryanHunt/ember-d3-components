@@ -1,4 +1,6 @@
 # Ember D3 Components
+=====================
+[![Build Status](https://travis-ci.org/BryanHunt/ember-d3-components.svg?branch=master)](https://travis-ci.org/BryanHunt/ember-d3-components)
 
 This addon provides EmberJS components for visualizing data with d3.js.
 
