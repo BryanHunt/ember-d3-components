@@ -5,6 +5,6 @@ module('Unit | Utility | layouts/d3 pie layout');
 
 // Replace this with your real tests.
 test('it works', function(assert) {
-  let result = layoutsD3PieLayout();
+  let result = layoutsD3PieLayout.create();
   assert.ok(result);
 });

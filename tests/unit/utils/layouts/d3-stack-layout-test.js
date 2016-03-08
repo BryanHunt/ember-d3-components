@@ -5,6 +5,6 @@ module('Unit | Utility | d3 stack layout');
 
 // Replace this with your real tests.
 test('it works', function(assert) {
-  let result = d3StackLayout();
+  let result = d3StackLayout.create();
   assert.ok(result);
 });
