@@ -9,29 +9,14 @@ export default Scale.extend({
   },
 
   rangeRoundChanged: on('init', observer('rangeRound.[]', function() {
-    let rangeRound = this.get('rangeRound');
-
-    if(rangeRound) {
-      this.get('scale').rangeRound(rangeRound);
-      Ember.run.next(this, 'notifyPropertyChange', 'scale');
-    }
+    this.updateScale('rangeRound');
   })),
 
   interpolateChanged: on('init', observer('interpolate', function() {
-    let interpolate = this.get('interpolate');
-
-    if(interpolate) {
-      this.get('scale').interpolate(interpolate);
-      Ember.run.next(this, 'notifyPropertyChange', 'scale');
-    }
+    this.updateScale('interpolate');
   })),
 
   clampChanged: on('init', observer('clamp', function() {
-    let clamp = this.get('clamp');
-
-    if(clamp !== undefined && clamp !== null) {
-      this.get('scale').clamp(clamp);
-      Ember.run.next(this, 'notifyPropertyChange', 'scale');
-    }
+    this.updateScale('clamp')
   }))
 });

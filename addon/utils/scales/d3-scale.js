@@ -4,20 +4,21 @@ const { on, observer } = Ember;
 
 export default Ember.Object.extend({
   domainChanged: on('init', observer('domain.[]', function() {
-    let domain = this.get('domain');
-
-    if(domain) {
-      this.get('scale').domain(domain);
-      Ember.run.next(this, 'notifyPropertyChange', 'scale');
-    }
+    this.updateScale('domain');
   })),
 
   rangeChanged: on('init', observer('range.[]', function() {
-    let range = this.get('range');
+    this.updateScale('range');
+  })),
 
-    if(range) {
-      this.get('scale').range(range);
+  updateScale(propertyName) {
+    let value = this.get(propertyName);
+
+    if(value !== undefined && value !== null) {
+      let scale = this.get('scale');
+      let prop = scale[propertyName];
+      prop(value);
       Ember.run.next(this, 'notifyPropertyChange', 'scale');
     }
-  })),
+  }
 });
