@@ -1,22 +1,21 @@
-import Accessor from 'dummy/utils/d3-data-accessor';
-import { module, test } from 'qunit';
+import { moduleFor, test } from 'ember-qunit';
 
-module('Unit | Utility | d3-data-accessor');
+moduleFor('util:d3-data-accessor', 'Unit | Utility | d3-data-accessor');
 
 test('default name', function(assert) {
-  let accessor = Accessor.create();
+  let accessor = this.subject();
   let data = { value: 10 };
   assert.equal(accessor.extract(data), 10);
 });
 
 test('specified name', function(assert) {
-  let accessor = Accessor.create({name: "y"});
+  let accessor = this.subject({name: "y"});
   let data = { y: 10 };
   assert.equal(accessor.extract(data), 10);
 });
 
 test('custom extractor', function(assert) {
-  let accessor = Accessor.create({extract: function(dataPoint) {
+  let accessor = this.subject({extract: function(dataPoint) {
     return dataPoint[this.get('name')] + 1;
   }});
   let data = { value: 10 };
