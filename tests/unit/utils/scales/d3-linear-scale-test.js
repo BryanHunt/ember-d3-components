@@ -61,7 +61,7 @@ test('range round element changed', function(assert) {
 });
 
 test('nice', function(assert) {
-  let scale = this.subject({domain: [0.1438, 0.8769], range: [0,100], nice: 10}).get('scale');
+  let scale = this.subject({domain: [0.1438, 0.8769], range: [0,100], nice: true}).get('scale');
   let domain = scale.domain();
   assert.equal(domain[0], 0.1);
   assert.equal(domain[1], 0.9);
@@ -70,7 +70,23 @@ test('nice', function(assert) {
 test('nice changed', function(assert) {
   let scaleObserver = this.subject({domain: [0.1438, 0.8769], range: [0,100]});
   let scale = scaleObserver.get('scale');
-  scaleObserver.set('nice', 10);
+  scaleObserver.set('nice', true);
+  let domain = scale.domain();
+  assert.equal(domain[0], 0.1);
+  assert.equal(domain[1], 0.9);
+});
+
+test('niceTickCount', function(assert) {
+  let scale = this.subject({domain: [0.1438, 0.8769], range: [0,100], niceTickCount: 10}).get('scale');
+  let domain = scale.domain();
+  assert.equal(domain[0], 0.1);
+  assert.equal(domain[1], 0.9);
+});
+
+test('niceTickCount changed', function(assert) {
+  let scaleObserver = this.subject({domain: [0.1438, 0.8769], range: [0,100]});
+  let scale = scaleObserver.get('scale');
+  scaleObserver.set('niceTickCount', 10);
   let domain = scale.domain();
   assert.equal(domain[0], 0.1);
   assert.equal(domain[1], 0.9);
