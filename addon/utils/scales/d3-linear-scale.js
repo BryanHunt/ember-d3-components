@@ -21,6 +21,15 @@ export default Scale.extend({
   })),
 
   niceChanged: on('init', observer('nice', function() {
-    this.updateScale('nice')
+    let nice = this.get('nice');
+
+    if(nice) {
+      this.get('scale').nice();
+      Ember.run.next(this, 'notifyPropertyChange', 'scale');
+    }
+  })),
+
+  niceTickCountChanged: on('init', observer('niceTickCount', function() {
+    this.updateScale('niceTickCount', 'nice')
   }))
 });
