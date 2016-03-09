@@ -60,9 +60,30 @@ test('range round element changed', function(assert) {
   assert.equal(scale(5.3257), 5);
 });
 
-//TODO: test('nice', function() {});
-//TODO: test('nice changed', function() {});
-//TODO: test('niceTickCount', function() {});
-//TODO: test('niceTickCount changed', function() {});
-//TODO: test('interpolate', function() {});
-//TODO: test('interpolate changed', function() {});
+test('nice', function(assert) {
+  let scale = this.subject({domain: [0.1438, 0.8769], range: [0,100], nice: 10}).get('scale');
+  let domain = scale.domain();
+  assert.equal(domain[0], 0.1);
+  assert.equal(domain[1], 0.9);
+});
+
+test('nice changed', function(assert) {
+  let scaleObserver = this.subject({domain: [0.1438, 0.8769], range: [0,100]});
+  let scale = scaleObserver.get('scale');
+  scaleObserver.set('nice', 10);
+  let domain = scale.domain();
+  assert.equal(domain[0], 0.1);
+  assert.equal(domain[1], 0.9);
+});
+
+test('interpolate', function(assert) {
+  let scale = this.subject({domain: [0, 10], range: [0,100], interpolate: d3.interpolateRound}).get('scale');
+  assert.equal(scale(5.476), 55);
+});
+
+test('interpolate changed', function(assert) {
+  let scaleObserver = this.subject({domain: [0, 10], range: [0,100]});
+  let scale = scaleObserver.get('scale');
+  scaleObserver.set('interpolate', d3.interpolateRound);
+  assert.equal(scale(5.476), 55);
+});
