@@ -11,13 +11,14 @@ export default Ember.Object.extend({
     this.updateScale('range');
   })),
 
-  updateScale(propertyName) {
+  updateScale(propertyName, functionName) {
     let value = this.get(propertyName);
 
     if(value !== undefined && value !== null) {
+      let fName = functionName || propertyName;
       let scale = this.get('scale');
-      let prop = scale[propertyName];
-      prop(value);
+      let d3Property = scale[fName];
+      d3Property(value);
       Ember.run.next(this, 'notifyPropertyChange', 'scale');
     }
   }
