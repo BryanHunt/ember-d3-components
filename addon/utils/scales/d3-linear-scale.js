@@ -18,5 +18,9 @@ export default Scale.extend({
 
   clampChanged: on('init', observer('clamp', function() {
     this.updateScale('clamp')
+  })),
+
+  niceChanged: on('init', observer('nice', function() {
+    this.updateScale('nice')
   }))
 });
