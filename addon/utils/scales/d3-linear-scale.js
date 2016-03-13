@@ -23,13 +23,16 @@ export default Scale.extend({
   niceChanged: on('init', observer('nice', function() {
     let nice = this.get('nice');
 
-    if(nice) {
+    if(nice === undefined || nice === null)
+      return;
+
+    if(nice === true) {
       this.get('scale').nice();
       Ember.run.next(this, 'notifyPropertyChange', 'scale');
+    } else if(nice === false) {
+      this.updateScale('domain');
+    } else {
+      this.updateScale('nice')
     }
-  })),
-
-  niceTickCountChanged: on('init', observer('niceTickCount', function() {
-    this.updateScale('niceTickCount', 'nice')
   }))
 });
