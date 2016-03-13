@@ -9,38 +9,32 @@ export default Scale.extend({
   },
 
   rangeRoundChanged: on('init', observer('rangeRound.[]', function() {
-    let rangeRound = this.get('rangeRound');
-
-    if(rangeRound) {
-      this.get('scale').rangeRound(rangeRound);
-      Ember.run.next(this, 'notifyPropertyChange', 'scale');
-    }
+    this.updateScale('rangeRound');
   })),
 
   baseChanged: on('init', observer('base', function() {
-    let base = this.get('base');
-
-    if(base) {
-      this.get('scale').base(base);
-      Ember.run.next(this, 'notifyPropertyChange', 'scale');
-    }
+    this.updateScale('base');
   })),
 
   interpolateChanged: on('init', observer('interpolate', function() {
-    let interpolate = this.get('interpolate');
-
-    if(interpolate) {
-      this.get('scale').interpolate(interpolate);
-      Ember.run.next(this, 'notifyPropertyChange', 'scale');
-    }
+    this.updateScale('interpolate');
   })),
 
   clampChanged: on('init', observer('clamp', function() {
-    let clamp = this.get('clamp');
+    this.updateScale('clamp');
+  })),
 
-    if(clamp !== undefined && clamp !== null) {
-      this.get('scale').clamp(clamp);
+  niceChanged: on('init', observer('nice', function() {
+    let nice = this.get('nice');
+
+    if(nice === undefined || nice === null)
+      return;
+
+    if(nice === true) {
+      this.get('scale').nice();
       Ember.run.next(this, 'notifyPropertyChange', 'scale');
+    } else {
+      this.updateScale('domain');
     }
   }))
 });
