@@ -76,7 +76,7 @@ test('nice changed', function(assert) {
   assert.equal(domain[1], 0.9);
 });
 
-test('nice changed', function(assert) {
+test('nice reset', function(assert) {
   let scaleObserver = this.subject({domain: [0.1438, 0.8769], range: [0,100], nice: true});
   let scale = scaleObserver.get('scale');
   scaleObserver.set('nice', false);
@@ -85,14 +85,14 @@ test('nice changed', function(assert) {
   assert.equal(domain[1], 0.8769);
 });
 
-test('niceTickCount', function(assert) {
+test('nice with ticks', function(assert) {
   let scale = this.subject({domain: [0.1438, 0.8769], range: [0,100], nice: 10}).get('scale');
   let domain = scale.domain();
   assert.equal(domain[0], 0.1);
   assert.equal(domain[1], 0.9);
 });
 
-test('niceTickCount changed', function(assert) {
+test('nice with ticks changed', function(assert) {
   let scaleObserver = this.subject({domain: [0.1438, 0.8769], range: [0,100]});
   let scale = scaleObserver.get('scale');
   scaleObserver.set('nice', 10);
