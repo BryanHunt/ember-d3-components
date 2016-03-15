@@ -9,19 +9,19 @@ export default Scale.extend({
   },
 
   rangeRoundChanged: on('init', observer('rangeRound.[]', function() {
-    this.updateScale('rangeRound');
+    this.updateProperty('scale', 'rangeRound');
   })),
 
   baseChanged: on('init', observer('base', function() {
-    this.updateScale('base');
+    this.updateProperty('scale', 'base');
   })),
 
   interpolateChanged: on('init', observer('interpolate', function() {
-    this.updateScale('interpolate');
+    this.updateProperty('scale', 'interpolate');
   })),
 
   clampChanged: on('init', observer('clamp', function() {
-    this.updateScale('clamp');
+    this.updateProperty('scale', 'clamp');
   })),
 
   niceChanged: on('init', observer('nice', function() {
@@ -34,7 +34,7 @@ export default Scale.extend({
       this.get('scale').nice();
       Ember.run.next(this, 'notifyPropertyChange', 'scale');
     } else {
-      this.updateScale('domain');
+      this.updateProperty('scale', 'domain');
     }
   }))
 });
