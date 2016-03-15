@@ -1,5 +1,6 @@
 import { moduleForComponent, test } from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
+import wait from 'ember-test-helpers/wait';
 
 moduleForComponent('d3-clip-path', 'Integration | Component | d3 clip path', {
   integration: true
@@ -21,4 +22,5 @@ test('it renders', function(assert) {
   `);
 
   assert.equal(this.$().text().trim(), 'template block text');
+  return wait();
 });
