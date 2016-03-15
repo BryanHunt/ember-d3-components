@@ -41,6 +41,13 @@ test('base', function(assert) {
   assert.equal(scale(10), 100);
 });
 
+test('base changed', function(assert) {
+  let scaleObserver = this.subject({domain: [1, 10], range: [0,100]});
+  let scale = scaleObserver.get('scale');
+  scaleObserver.set('base', 2);
+  assert.equal(scale(10), 100);
+});
+
 test('clamp', function(assert) {
   let scale = this.subject({domain: [1, 10], range: [0,100], clamp: true}).get('scale');
   assert.equal(scale(20), 100);
