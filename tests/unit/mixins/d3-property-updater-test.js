@@ -4,9 +4,14 @@ import { module, test } from 'qunit';
 
 module('Unit | Mixin | d3 property updater');
 
-// Replace this with your real tests.
-test('it works', function(assert) {
+test('updateProperty', function(assert) {
   let D3PropertyUpdaterObject = Ember.Object.extend(D3PropertyUpdaterMixin);
   let subject = D3PropertyUpdaterObject.create();
-  assert.ok(subject);
+  let propValue;
+  subject.set('prop', {value: function(value) {
+    propValue = value;
+  }});
+  subject.set('value', "foo");
+  subject.updateProperty('prop', 'value');
+  assert.equal(subject.get('propValue', "foo"));
 });
