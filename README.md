@@ -5,8 +5,7 @@ This addon provides EmberJS components for visualizing data with d3.js.
 
 See it in action: http://bryanhunt.github.io/#/d3components
 
-This project is very much in the experimental phase and the API is in flux.  
-Use with caution.
+The util API seems to be much more consistent now, so I don't see it changing much.  I'll try to solidify the component API next.  I hope that future changes will simply be adding functionality.  All of the objects in util now have significant unit tests.
 
 Things that seem to be working:
 * Scales
@@ -37,13 +36,13 @@ This is a fairly significant undertaking and I would welcome additional contribu
 * `npm install`
 * `bower install`
 
-## Running Tests
+### Running Tests
 
 * `npm test` (Runs `ember try:testall` to test your addon against multiple Ember versions)
 * `ember test`
 * `ember test --server`
 
-## Building
+### Building
 
 * `ember build`
 
