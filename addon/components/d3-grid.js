@@ -7,7 +7,7 @@ export default Axis.extend({
   tickFormat: "",
 
   parametersChanged: on('init', observer('width', 'height', 'orientation', function() {
-    Ember.run.once(this, this.updateGrid);
+    Ember.run.next(this, this.updateGrid);
   })),
 
   updateGrid() {

@@ -10,9 +10,14 @@ export default D3Component.extend({
   value: "",
 
   propertiesUpdated: observer('d3Selection', 'anchor', 'value', function() {
-    let d3Selection = this.get('d3Selection');
+    Ember.run.next(this, 'draw');
+  }),
 
-    if(!d3Selection) {
+  draw() {
+    let d3Selection = this.get('d3Selection');
+    let value = this.get('value');
+
+    if(!d3Selection || !value) {
       return;
     }
 
@@ -22,10 +27,6 @@ export default D3Component.extend({
       d3Selection.style("text-anchor", anchor);
     }
 
-    let value = this.get('value');
-
-    if(value) {
-      d3Selection.text(value);
-    }
-  })
+    d3Selection.text(value);
+  }
 });

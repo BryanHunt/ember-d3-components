@@ -15,10 +15,10 @@ export default D3Group.extend({
   },
 
   propertyChanged: observer('d3Selection', 'xScale', 'xScale.scale', 'yScale', 'yScale.scale', 'rScale', 'rScale.scale','data', function() {
-    Ember.run.next(this, 'plot');
+    Ember.run.next(this, 'draw');
   }),
 
-  plot() {
+  draw() {
     let d3Selection = this.get('d3Selection');
     let data = this.get('data');
     let xScale = this.get('xScale.scale');

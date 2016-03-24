@@ -13,7 +13,7 @@ export default D3Group.extend({
   },
 
   propertiesUpdated: observer('d3Selection', 'data', function() {
-    Ember.run.next(this, 'plot');
+    Ember.run.next(this, 'draw');
   }),
 
   xScaleUpdated: on('init', observer('xScale', 'xScale.scale', function() {
@@ -22,7 +22,7 @@ export default D3Group.extend({
 
     if(scale) {
       this.get('line').x((dataPoint) => {return scale(accessor.extract(dataPoint));});
-      Ember.run.next(this, 'plot');
+      Ember.run.next(this, 'draw');
     }
   })),
 
@@ -32,11 +32,11 @@ export default D3Group.extend({
 
     if(scale) {
       this.get('line').y((dataPoint) => {return scale(accessor.extract(dataPoint));});
-      Ember.run.next(this, 'plot');
+      Ember.run.next(this, 'draw');
     }
   })),
 
-  plot() {
+  draw() {
     let d3Selection = this.get('d3Selection');
     let data = this.get('data');
     let xScale = this.get('xScale');

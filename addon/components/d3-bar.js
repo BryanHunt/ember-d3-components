@@ -15,10 +15,10 @@ export default D3Group.extend({
   },
 
   propertyChanged: observer('d3Selection', 'orientation', 'xScale', 'xScale.scale', 'yScale', 'yScale.scale', 'y0Scale', 'y0Scale.scale', 'data', 'barWidthTransform', function() {
-    Ember.run.next(this, 'plot');
+    Ember.run.next(this, 'draw');
   }),
 
-  plot() {
+  draw() {
     let d3Selection = this.get('d3Selection');
     let orientation = this.get('orientation');
     var xScale = this.get('xScale.scale');
