@@ -41,7 +41,7 @@
     "loader.js": "^4.0.0"
   },
   "keywords": [
-    "ember-addon"
+    "ember-addon", "d3"
   ],
   "dependencies": {
     "ember-cli-htmlbars": "^1.0.1",
