@@ -22,7 +22,7 @@
   "devDependencies": {
     "broccoli-asset-rev": "^2.2.0",
     "ember-ajax": "0.7.1",
-    "ember-cli": "2.4.1",
+    "ember-cli": "2.4.2",
     "ember-cli-app-version": "^1.0.0",
     "ember-cli-dependency-checker": "^1.2.0",
     "ember-cli-htmlbars-inline-precompile": "^0.3.1",
@@ -41,7 +41,8 @@
     "loader.js": "^4.0.0"
   },
   "keywords": [
-    "ember-addon", "d3"
+    "ember-addon",
+    "d3"
   ],
   "dependencies": {
     "ember-cli-htmlbars": "^1.0.1",
