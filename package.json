@@ -48,7 +48,8 @@
     "ember-cli-babel": "^5.1.5"
   },
   "ember-addon": {
-    "configPath": "tests/dummy/config"
+    "configPath": "tests/dummy/config",
+    "demoURL": "http://bryanhunt.github.io/#/d3components"
   },
   "bugs": {
     "url": "https://github.com/BryanHunt/ember-d3-components/issues"
