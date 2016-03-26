@@ -5,6 +5,8 @@ This addon provides EmberJS components for visualizing data with d3.js.
 
 See it in action: http://bryanhunt.github.io/#/d3components
 
+There are examples in the dummy app that show how to use the components.
+
 The util API seems to be much more consistent now, so I don't see it changing much.  I'll try to solidify the component API next.  I hope that future changes will simply be adding functionality.  All of the objects in util now have significant unit tests.
 
 Things that seem to be working:
