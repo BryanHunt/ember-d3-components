@@ -5,6 +5,8 @@ import Accessor from '../utils/d3-data-accessor';
 const { on, observer } = Ember;
 
 export default D3Group.extend({
+  attributeBindings: ['transform'],
+
   init() {
     this._super(...arguments);
     this.line = d3.svg.line();

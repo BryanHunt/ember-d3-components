@@ -5,6 +5,7 @@ import Accessor from '../utils/d3-data-accessor';
 const { observer } = Ember;
 
 export default D3Group.extend({
+  attributeBindings: ['transform'],
   radius: 4.5,
 
   init() {
