@@ -6,6 +6,14 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+  this.route('axis');
+  this.route('grid');
+  this.route('text');
+  this.route('line');
+  this.route('circle');
+  this.route('bar');
+  this.route('arc');
+  this.route('area');
 });
 
 export default Router;

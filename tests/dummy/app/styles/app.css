@@ -1,0 +1,20 @@
+.axis path, .axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.grid .tick line {
+  stroke: lightgrey;
+}
+
+.grid path {
+  fill: none;
+  stroke-width: 1;
+}
+
+.line{
+  fill: none;
+  stroke: steelblue;
+  stroke-width: 2;
+}
