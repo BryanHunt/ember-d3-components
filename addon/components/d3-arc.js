@@ -4,6 +4,8 @@ import D3Group from './d3-group';
 const { observer, on } = Ember;
 
 export default D3Group.extend({
+  attributeBindings: ['transform'],
+
   init() {
     this._super(...arguments);
     this.set('arc', d3.svg.arc());
